@@ -5,8 +5,22 @@
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---------- current year ---------- */
-  var yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+  document.querySelectorAll("[data-year]").forEach(function (el) {
+    el.textContent = String(new Date().getFullYear());
+  });
+
+  /* ---------- brand logo fallback ---------- */
+  /* The nav uses the real logo bitmap. If it isn't in the repo yet, fall back to the
+     vector mark in assets/img/ rather than showing a broken image. */
+  document.querySelectorAll("[data-fallback]").forEach(function (img) {
+    img.addEventListener("error", function onErr() {
+      img.removeEventListener("error", onErr); // a broken fallback must not loop
+      img.src = img.getAttribute("data-fallback");
+    });
+    if (img.complete && img.naturalWidth === 0) {
+      img.src = img.getAttribute("data-fallback");
+    }
+  });
 
   /* ---------- mobile nav ---------- */
   var toggle = document.getElementById("navToggle");
@@ -57,32 +71,6 @@
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
-
-  /* ---------- scroll spy ---------- */
-  var navAnchors = Array.prototype.slice.call(
-    document.querySelectorAll('.nav__links a[href^="#"]')
-  );
-  var sections = navAnchors
-    .map(function (a) { return document.querySelector(a.getAttribute("href")); })
-    .filter(Boolean);
-
-  if (sections.length && "IntersectionObserver" in window) {
-    var spy = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          navAnchors.forEach(function (a) {
-            a.classList.toggle(
-              "is-active",
-              a.getAttribute("href") === "#" + entry.target.id
-            );
-          });
-        });
-      },
-      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
-    );
-    sections.forEach(function (s) { spy.observe(s); });
-  }
 
   /* ---------- reveal on scroll ---------- */
   var revealables = document.querySelectorAll(".reveal");

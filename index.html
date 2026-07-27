@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Crash Out! &mdash; FTC Team 23405</title>
-<meta name="description" content="FIRST Tech Challenge Team 23405 &quot;Crash Out!&quot; from Redmond, Washington. Breaking boundaries, building futures. Robot design, software, outreach and sponsorship.">
+<meta name="description" content="FIRST Tech Challenge Team 23405 &quot;Crash Out!&quot; from Redmond, Washington. Breaking boundaries, building futures.">
 <meta name="theme-color" content="#fdf0e6">
 
 <meta property="og:type" content="website">
@@ -22,35 +22,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="assets/css/style.css">
-
-<!-- Runs before first paint. Scroll-reveal animations only apply when JS is available,
-     so the page is never blank if main.js fails to load. -->
 <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 
-<a class="skip-link" href="#home">Skip to content</a>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<!-- ============ NAV ============ -->
+<!-- ============ NAV (identical on every page except aria-current) ============ -->
 <header class="nav" id="nav">
   <div class="nav__inner">
-    <a class="brand" href="#home" aria-label="Crash Out! Team 23405 home">
-      <span class="brand__mark" aria-hidden="true">
-        <svg viewBox="0 0 64 64" role="presentation">
-          <defs>
-            <linearGradient id="bg-grad" x1="0" y1="1" x2="1" y2="0">
-              <stop offset="0%" stop-color="#ff3d9a"/>
-              <stop offset="55%" stop-color="#ff8a5c"/>
-              <stop offset="100%" stop-color="#ffcf4d"/>
-            </linearGradient>
-          </defs>
-          <circle cx="32" cy="32" r="29" fill="url(#bg-grad)" stroke="#111" stroke-width="3"/>
-          <path d="M25 14 l-6 12 h6 l-4 9 11-13h-6z" fill="#111"/>
-          <path d="M40 16 l-5 10 h5 l-3 8 9-11h-5z" fill="#111"/>
-          <rect x="17" y="38" width="30" height="4.5" rx="2.2" fill="#111"/>
-          <rect x="21" y="45" width="22" height="4.5" rx="2.2" fill="#111"/>
-        </svg>
-      </span>
+    <a class="brand" href="index.html" aria-current="page">
+      <img class="brand__logo" src="assets/img/logo.png" alt="" width="46" height="46"
+           data-fallback="assets/img/logo.svg">
       <span class="brand__text">
         <strong>CRASH OUT!</strong>
         <em>FTC&nbsp;23405</em>
@@ -58,13 +41,12 @@
     </a>
 
     <nav class="nav__links" id="navLinks" aria-label="Main">
-      <a href="#about">About</a>
-      <a href="#awards">Awards</a>
-      <a href="#robot">The Robot</a>
-      <a href="#software">Software</a>
-      <a href="#outreach">Outreach</a>
-      <a href="#sponsors">Sponsors</a>
-      <a class="nav__cta" href="#contact">Contact</a>
+      <a href="about.html">About</a>
+      <a href="robots.html">Robots</a>
+      <a href="awards.html">Awards</a>
+      <a href="impact.html">Impact</a>
+      <a href="sponsor.html">Sponsor Us</a>
+      <a class="nav__cta" href="contact.html">Contact Us</a>
     </nav>
 
     <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
@@ -74,10 +56,10 @@
   <div class="nav__progress" id="navProgress" aria-hidden="true"></div>
 </header>
 
-<main>
+<main id="main">
 
 <!-- ============ HERO ============ -->
-<section class="hero" id="home">
+<section class="hero">
   <div class="hero__glow" aria-hidden="true"></div>
   <div class="hero__grid-lines" aria-hidden="true"></div>
 
@@ -90,602 +72,107 @@
       </h1>
       <p class="hero__tag">Breaking boundaries, building futures.</p>
       <p class="hero__lede">
-        We're a student-led <em>FIRST</em> Tech Challenge team of eight 8th and 9th graders.
-        We design and build competition robots, write the software that drives them, and spend the
-        rest of our time getting other kids hooked on STEM &mdash; from Redmond libraries
-        to classrooms in rural India.
+        We're a student-led <em>FIRST</em> Tech Challenge team of eight 8th and 9th graders. We
+        design and build competition robots, write the software that drives them, and spend the
+        rest of our time getting other kids hooked on STEM &mdash; from Redmond libraries to
+        classrooms in rural India.
       </p>
       <div class="hero__actions">
-        <a class="btn btn--primary" href="#robot">Meet the robot</a>
-        <a class="btn btn--ghost" href="#sponsors">Sponsor us</a>
+        <a class="btn btn--primary" href="robots.html">Meet the robot</a>
+        <a class="btn btn--ghost" href="sponsor.html">Sponsor us</a>
       </div>
     </div>
 
     <div class="hero__badge-stack">
       <div class="badge-card badge-card--award">
-        <span class="badge-card__medal">🥉</span>
+        <span class="badge-card__medal" aria-hidden="true">🥉</span>
         <div>
           <strong>3rd Place Inspire Award</strong>
           <span>Feynman League Tournament &middot; DECODE 2025</span>
         </div>
       </div>
       <div class="badge-card">
-        <span class="badge-card__medal">🥇</span>
+        <span class="badge-card__medal" aria-hidden="true">🥇</span>
         <div>
           <strong>1st Place Connect Award</strong>
           <span>Feynman Interleague &middot; INTO THE DEEP 2024</span>
         </div>
       </div>
       <div class="badge-card">
-        <span class="badge-card__medal">🥈</span>
+        <span class="badge-card__medal" aria-hidden="true">🥈</span>
         <div>
           <strong>2nd Place Connect Award</strong>
           <span>Capek Semifinal &middot; INTO THE DEEP 2024</span>
         </div>
       </div>
+      <p class="hero__badge-more"><a href="awards.html">See the full record &rarr;</a></p>
     </div>
   </div>
 
   <div class="wrap">
-    <ul class="statstrip" id="statstrip">
+    <ul class="statstrip">
       <li><span class="statstrip__num" data-count="10180" data-suffix="+">0</span><span class="statstrip__label">People reached</span></li>
       <li><span class="statstrip__num" data-count="8">0</span><span class="statstrip__label">Team members</span></li>
       <li><span class="statstrip__num" data-count="3">0</span><span class="statstrip__label">Seasons competed</span></li>
-      <li><span class="statstrip__num" data-count="9000" data-suffix="+">0</span><span class="statstrip__label">YouTube reach</span></li>
+      <li><span class="statstrip__num" data-count="3">0</span><span class="statstrip__label">Awards won</span></li>
     </ul>
   </div>
 </section>
 
-<!-- ============ ABOUT ============ -->
-<section class="section" id="about">
+<!-- ============ WHAT WE DO ============ -->
+<section class="section section--alt">
   <div class="wrap">
     <header class="section__head reveal">
-      <p class="kicker">01 &mdash; Who we are</p>
-      <h2>About the team</h2>
-      <p class="section__sub">
-        Crash Out! started as six kids with a shared obsession. We're eight now, and every one of
-        us builds, codes, or presents &mdash; usually all three.
-      </p>
+      <p class="kicker">What we do</p>
+      <h2>Three things, all season long</h2>
     </header>
 
-    <div class="grid grid--about">
-      <article class="card card--wide reveal">
-        <h3>Our story</h3>
+    <div class="grid grid--three">
+      <a class="teaser reveal" href="robots.html">
+        <span class="teaser__tag">Robots</span>
+        <h3>Build and rebuild</h3>
         <p>
-          We are Crash Out! Team 23405, a group of eight hardworking 8th and 9th graders fueled by a
-          passion for STEM. With a wide range of <em>FIRST</em> experience between us, we're young
-          innovators eager to push our limits no matter our current proficiency.
+          Four league meets, four different robots. Our shooter went through three versions and our
+          transfer through five before we had something we trusted on the field.
         </p>
+        <span class="teaser__go">See the robot &rarr;</span>
+      </a>
+
+      <a class="teaser reveal" href="impact.html">
+        <span class="teaser__tag">Impact</span>
+        <h3>Get kids into STEM</h3>
         <p>
-          We opened the season with six members. Over the year we collaborated with new students who
-          showed a love for STEM, helped them get up to speed, and inspired two of them to join the
-          team outright. Every rookie goes through an onboarding process where we teach FTC skills
-          outside of meetings, so they can contribute meaningfully during team time.
+          We prioritize outreach where STEM access is limited. One school we visited in India
+          launched an engineering class for 400 students afterward.
         </p>
-      </article>
+        <span class="teaser__go">See our impact &rarr;</span>
+      </a>
 
-      <article class="card card--values reveal">
-        <h3>Core principles</h3>
-        <ul class="ticks">
-          <li><strong>Gracious Professionalism</strong> in every interaction, on and off the field.</li>
-          <li><strong>Fail fast.</strong> Experiment, learn, and improve as quickly as possible.</li>
-          <li><strong>Inspire kids</strong> in and out of our community to pursue STEM.</li>
-          <li><strong>Connect with industry</strong> to learn what's new, then share it back.</li>
-        </ul>
-      </article>
-
-      <article class="card card--quote reveal">
-        <blockquote>
-          It's been great mentoring Crash Out these past few years. They're always enthusiastic,
-          curious and ready to learn. They've grown by leaps and bounds. Really impressive team.
-        </blockquote>
-        <footer>&mdash; Rachit, Mentor</footer>
-      </article>
-
-      <article class="card reveal">
-        <h3>Mentors &amp; coaches</h3>
+      <a class="teaser reveal" href="about.html">
+        <span class="teaser__tag">About</span>
+        <h3>Grow the team</h3>
         <p>
-          Our mentors <strong>Rachit</strong> and <strong>Varun</strong> steer us with actionable
-          feedback. Rachit, an engineer at Bosch, came to us through an industry connection and
-          directly shaped our robot's design and software. Our coaches share their experience from
-          the STEM industry and guide us to perform as a united team.
+          We started the season with six members and finished with eight, each onboarded by
+          teammates outside of regular meeting time.
         </p>
-        <p>
-          We lean on them for the hard physics, math, and controls concepts &mdash; and we've sourced
-          additional mentors through personal connections in our community.
-        </p>
-      </article>
-
-      <article class="card card--goals reveal">
-        <h3>What we're chasing</h3>
-        <div class="goalset">
-          <div class="goal">
-            <span class="goal__tag">Community</span>
-            <p>Host outreaches wherever STEM access is limited, support new FTC teams, and become active advocates in our region.</p>
-          </div>
-          <div class="goal">
-            <span class="goal__tag">Technical</span>
-            <p>Sharpen our CAD accuracy, integrate new software modules, and learn the math and physics that make mechanisms work.</p>
-          </div>
-          <div class="goal">
-            <span class="goal__tag">Professionalism</span>
-            <p>Run every meeting on a clear agenda with a prioritized task list and a timeline we actually hold ourselves to.</p>
-          </div>
-        </div>
-      </article>
+        <span class="teaser__go">Meet the team &rarr;</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ============ AWARDS ============ -->
-<section class="section section--alt" id="awards">
+<!-- ============ SPONSOR STRIP ============ -->
+<section class="section">
   <div class="wrap">
-    <header class="section__head reveal">
-      <p class="kicker">02 &mdash; Record</p>
-      <h2>Awards &amp; season history</h2>
-      <p class="section__sub">
-        Verified competition results from
-        <a href="https://ftcscout.org/teams/23405" target="_blank" rel="noopener">FTCScout</a>.
-      </p>
-    </header>
-
-    <ol class="timeline">
-      <li class="timeline__item reveal">
-        <div class="timeline__dot" aria-hidden="true"></div>
-        <div class="timeline__body">
-          <p class="timeline__date">December 6, 2025</p>
-          <h3>3rd Place Inspire Award</h3>
-          <p class="timeline__meta">Feynman League Tournament &middot; Mill Creek, WA</p>
-          <p>
-            Our first Inspire recognition &mdash; the award that looks at the whole team at once:
-            robot, portfolio, outreach, and how we carry ourselves. It landed in the DECODE season,
-            after a rebuild that finally made our shooter reliable.
-          </p>
-          <span class="pill pill--season">DECODE 2025&ndash;26</span>
-        </div>
-      </li>
-      <li class="timeline__item reveal">
-        <div class="timeline__dot" aria-hidden="true"></div>
-        <div class="timeline__body">
-          <p class="timeline__date">January 12, 2025</p>
-          <h3>2nd Place Connect Award</h3>
-          <p class="timeline__meta">Capek Semifinal &middot; Maple Valley, WA</p>
-          <p>
-            Recognition for the network we've built with engineers at Meta Reality Labs, Microsoft,
-            and Bosch, and for turning those conversations into real design decisions.
-          </p>
-          <span class="pill pill--season">INTO THE DEEP 2024&ndash;25</span>
-        </div>
-      </li>
-      <li class="timeline__item reveal">
-        <div class="timeline__dot" aria-hidden="true"></div>
-        <div class="timeline__body">
-          <p class="timeline__date">December 7, 2024</p>
-          <h3>1st Place Connect Award</h3>
-          <p class="timeline__meta">Feynman Interleague &middot; Mill Creek, WA</p>
-          <p>
-            Our first blue banner. Won for connecting with the STEM community and our region's FTC
-            teams &mdash; and for bringing what we learned back to the field.
-          </p>
-          <span class="pill pill--season">INTO THE DEEP 2024&ndash;25</span>
-        </div>
-      </li>
-      <li class="timeline__item reveal">
-        <div class="timeline__dot timeline__dot--hollow" aria-hidden="true"></div>
-        <div class="timeline__body timeline__body--muted">
-          <p class="timeline__date">2023</p>
-          <h3>Rookie season</h3>
-          <p class="timeline__meta">Team founded &middot; Redmond, WA</p>
-          <p>Six members, a lot of VEX IQ habits to unlearn, and a first FTC robot.</p>
-        </div>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<!-- ============ ROBOT ============ -->
-<section class="section" id="robot">
-  <div class="wrap">
-    <header class="section__head reveal">
-      <p class="kicker">03 &mdash; The robot</p>
-      <h2>DECODE 2025&ndash;26</h2>
-      <p class="section__sub">
-        We started the season as a close-range shooter with no indexing. We chose to challenge
-        ourselves and pursue the far launch zone instead &mdash; to offer differentiated value and
-        create real synergy with our alliance partners.
-      </p>
-    </header>
-
-    <!-- season progression tabs -->
-    <h3 class="subhead subhead--tight reveal">Season progression</h3>
-    <p class="subhead__note reveal">Four league meets, four different robots. Nothing here was right the first time.</p>
-
-    <div class="tabs reveal" id="seasonTabs">
-      <div class="tabs__list" role="tablist" aria-label="Season progression">
-        <button role="tab" id="tab-lm0" aria-controls="panel-lm0" aria-selected="true">League Meet 0</button>
-        <button role="tab" id="tab-lm1" aria-controls="panel-lm1" aria-selected="false">League Meet 1</button>
-        <button role="tab" id="tab-lm2" aria-controls="panel-lm2" aria-selected="false">League Meet 2</button>
-        <button role="tab" id="tab-il" aria-controls="panel-il" aria-selected="false">Interleague</button>
-      </div>
-
-      <div class="tabs__panels">
-        <div class="tabs__panel" role="tabpanel" id="panel-lm0" aria-labelledby="tab-lm0">
-          <div class="verdict">
-            <div class="verdict__col verdict__col--good">
-              <h4>Worked</h4>
-              <ul><li>Could block other robots from scoring</li><li>Fast drivetrain on 435&nbsp;RPM motors</li></ul>
-            </div>
-            <div class="verdict__col verdict__col--bad">
-              <h4>Didn't</h4>
-              <ul>
-                <li>Couldn't hold three artifacts</li>
-                <li>Shooter inconsistent and broke apart easily</li>
-                <li>Transfer inconsistent; flywheel ripped apart often</li>
-                <li>Drivetrain bevel gears kept coming apart</li>
-              </ul>
-            </div>
-          </div>
-          <p class="verdict__learn"><strong>Takeaway:</strong> fast cycle times matter more than raw capability. We rebuilt around a ramp and a simple double-motor flywheel shooter.</p>
-        </div>
-
-        <div class="tabs__panel" role="tabpanel" id="panel-lm1" aria-labelledby="tab-lm1" hidden>
-          <div class="verdict">
-            <div class="verdict__col verdict__col--good">
-              <h4>Worked</h4>
-              <ul><li>Held three artifacts</li><li>Reliable shooting</li><li>Intake funnel guided artifacts in</li></ul>
-            </div>
-            <div class="verdict__col verdict__col--bad">
-              <h4>Didn't</h4>
-              <ul>
-                <li>Artifacts fell out after intaking through the shooter</li>
-                <li>Couldn't shoot far consistently</li>
-                <li>Transfer had dead spots</li>
-                <li>Slow intake; couldn't reach corner artifacts</li>
-              </ul>
-            </div>
-          </div>
-          <p class="verdict__learn"><strong>Takeaway:</strong> the straight ramp bought us distance but cost us contact time with the artifact.</p>
-        </div>
-
-        <div class="tabs__panel" role="tabpanel" id="panel-lm2" aria-labelledby="tab-lm2" hidden>
-          <div class="verdict">
-            <div class="verdict__col verdict__col--good">
-              <h4>Worked</h4>
-              <ul><li>Stored three artifacts well</li><li>Efficient transfer, far fewer jams</li><li>Could shoot from far <em>and</em> close</li></ul>
-            </div>
-            <div class="verdict__col verdict__col--bad">
-              <h4>Didn't</h4>
-              <ul><li>Shooting still inconsistent</li><li>Repeated robot disconnection issues</li><li>Inconsistent autonomous</li></ul>
-            </div>
-          </div>
-          <p class="verdict__learn"><strong>Takeaway:</strong> adding a lip to the ramp fixed the shooting geometry. Consistency was now a software problem, not a hardware one.</p>
-        </div>
-
-        <div class="tabs__panel" role="tabpanel" id="panel-il" aria-labelledby="tab-il" hidden>
-          <div class="verdict verdict--single">
-            <div class="verdict__col verdict__col--good">
-              <h4>Key features</h4>
-              <ul>
-                <li>Reliable shooting with Limelight auto-aim</li>
-                <li>Consistent scoring from the far launch zone</li>
-                <li>Reworked transfer that indexes one artifact at a time</li>
-                <li>Consistent autonomous built on Pedro Pathing</li>
-              </ul>
-            </div>
-          </div>
-          <p class="verdict__learn"><strong>Result:</strong> 3rd Place Inspire Award at the Feynman League Tournament.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- subsystems -->
-    <h3 class="subhead reveal">Subsystem iteration</h3>
-    <p class="subhead__note reveal">Every mechanism on this robot is a version number. Here's how each one got there.</p>
-
-    <div class="accordion reveal" id="subsystems">
-      <details class="acc" open>
-        <summary>
-          <span class="acc__title">Shooter</span>
-          <span class="acc__vers">V1 → V3</span>
-        </summary>
-        <div class="acc__body">
-          <div class="steps">
-            <div class="step">
-              <span class="step__label">V1 &middot; LM0</span>
-              <p>Semi-hooded design, two rhino wheels at center, driven by two motors through bevel gears. Great contact with the artifact &mdash; but it couldn't shoot far enough.</p>
-            </div>
-            <div class="step">
-              <span class="step__label">V2 &middot; LM1</span>
-              <p>Two flywheels and a straight ramp. Shot much farther and complemented close-shooting alliance partners, but we lost contact time and artifacts didn't launch high enough. Varun helped us brainstorm this direction.</p>
-            </div>
-            <div class="step">
-              <span class="step__label">V3 &middot; LM2</span>
-              <p>Kept the V2 long-range geometry and added a lip as a workaround for the launch-angle problem. Result: a consistent shooter that could still reach the far zone.</p>
-            </div>
-          </div>
-        </div>
-      </details>
-
-      <details class="acc">
-        <summary>
-          <span class="acc__title">Intake</span>
-          <span class="acc__vers">3 revisions</span>
-        </summary>
-        <div class="acc__body">
-          <div class="steps">
-            <div class="step">
-              <span class="step__label">LM0</span>
-              <p>A row of Gecko wheels driven by a motor and bevel gears. Worked as a ground intake, but couldn't transfer and missed artifacts.</p>
-            </div>
-            <div class="step">
-              <span class="step__label">LM1</span>
-              <p>Mecanum wheels plus Gecko wheels, with a funnel to widen our reach. The mecanums countered artifact rotation and cut transfer inconsistency &mdash; but corners were still unreachable and it couldn't hold three at once.</p>
-            </div>
-            <div class="step">
-              <span class="step__label">LM2 → Interleague</span>
-              <p>Switched to a rubber-band intake with a more curved funnel geometry. Held three artifacts and stopped them slipping back out of the ramp.</p>
-            </div>
-          </div>
-        </div>
-      </details>
-
-      <details class="acc">
-        <summary>
-          <span class="acc__title">Transfer</span>
-          <span class="acc__vers">V1 → V5</span>
-        </summary>
-        <div class="acc__body">
-          <div class="steps">
-            <div class="step">
-              <span class="step__label">V1</span>
-              <p>Two custom TPU rollers on a continuous-rotation servo. Delicate, jam-prone, and hard to mount.</p>
-            </div>
-            <div class="step">
-              <span class="step__label">V2</span>
-              <p>A single Gecko wheel on a shaft pushing artifacts into the shooter. Mounted cleanly and transferred well, but often pushed more than one artifact through, with dead spots and compression problems.</p>
-            </div>
-            <div class="step">
-              <span class="step__label">V3 &middot; LM1</span>
-              <p>Back to V1, widened for more contact. More consistent than V1 or V2, but artifacts backflowed into the shooter and the TPU was too malleable.</p>
-            </div>
-            <div class="step">
-              <span class="step__label">V4 &middot; LM2</span>
-              <p>Curved the ends and switched TPU → PLA for stiffness. Better control, no backflow, easy and consistent &mdash; but it still occasionally sent two artifacts at once.</p>
-            </div>
-            <div class="step step--final">
-              <span class="step__label">V5 &middot; Interleague</span>
-              <p>A positional servo with a large curved upper that acts as a physical hardstop. While the intake runs, geometry alone prevents an artifact from reaching the shooter &mdash; the double-transfer bug is designed out rather than coded around.</p>
-              <p class="step__risk"><strong>Known tradeoffs:</strong> the transfer must reverse to reset, which limits cycle time, and it doesn't center the ball entering the shooter, so occasional inconsistency remains.</p>
-            </div>
-          </div>
-        </div>
-      </details>
-    </div>
-
-    <h3 class="subhead reveal">How we engineer</h3>
-    <ol class="process reveal">
-      <li><span class="process__n">1</span><h4>Define</h4><p>Nail down the intended function and outcome so we can plan against it.</p></li>
-      <li><span class="process__n">2</span><h4>Brainstorm</h4><p>Sketch several ideas and name the early risks &mdash; jamming, misalignment &mdash; before any prototype exists.</p></li>
-      <li><span class="process__n">3</span><h4>CAD</h4><p>Build it in Onshape and 3D print it. Software ideas get prototyped in code.</p></li>
-      <li><span class="process__n">4</span><h4>Build &amp; test</h4><p>Assemble from the CAD, then record performance and results rather than trusting a feel.</p></li>
-      <li><span class="process__n">5</span><h4>Iterate</h4><p>Analyze, then redesign or keep. This loop is what produced the crescent transfer.</p></li>
-    </ol>
-  </div>
-</section>
-
-<!-- ============ SOFTWARE ============ -->
-<section class="section section--dark" id="software">
-  <div class="wrap">
-    <header class="section__head reveal">
-      <p class="kicker kicker--light">04 &mdash; Code</p>
-      <h2>Software</h2>
-      <p class="section__sub">
-        Java on Android Studio, structured around commands and subsystems. The interesting parts
-        are the control loops.
-      </p>
-    </header>
-
-    <div class="grid grid--soft">
-      <article class="scard reveal">
-        <span class="scard__tag">Architecture</span>
-        <h3>NextFTC CommandBase</h3>
-        <p>
-          An FTC-tailored library where commands, subsystems, and components move every mechanism
-          through simple finite-state-machine logic. Each mechanism is its own subsystem, controlled
-          by commands mapped to gamepad buttons.
-        </p>
-      </article>
-
-      <article class="scard reveal">
-        <span class="scard__tag">Autonomous</span>
-        <h3>Pedro Pathing</h3>
-        <p>
-          A reactive path follower built on Bézier curves. Its built-in PIDF control smooths our
-          motion and corrects for variance in path conditions. We also use it in TeleOp for
-          centripetal force correction and field-centric drive, and because it integrates with
-          NextFTC we can follow paths as commands.
-        </p>
-      </article>
-
-      <article class="scard scard--wide reveal">
-        <span class="scard__tag">Controls</span>
-        <h3>Custom velocity PIDF + low-pass filter</h3>
-        <p>
-          A consistent shooter needs precise velocity control, so we tuned a PIDF controller using
-          physics, trigonometry, and calculus to respond to the resistance and velocity shifts that
-          happen every time an artifact passes through the flywheels.
-        </p>
-        <p>
-          On top of the velocity PIDF we run a low-pass filter on measured velocity, averaging past
-          samples with the current one and feeding that as the setpoint. It smooths out the
-          high-frequency oscillation the raw signal caused in the loop.
-        </p>
-      </article>
-
-      <article class="scard reveal">
-        <span class="scard__tag">Vision</span>
-        <h3>Limelight 3A auto-aim</h3>
-        <p>
-          The Limelight detects the AprilTag on the classifier. We compute the heading error between
-          the camera center and the tag center, then run a PIDF controller on the robot's heading to
-          drive it to zero &mdash; so drivers stop burning seconds lining up shots.
-        </p>
-      </article>
-
-      <article class="scard reveal">
-        <span class="scard__tag">Localization</span>
-        <h3>Kalman filter sensor fusion</h3>
-        <p>
-          Deadwheels and an IMU on a goBILDA Pinpoint give excellent short-horizon localization, but
-          error accumulates over a 2.5-minute match. We fuse Pinpoint's estimate with pose
-          measurements derived from fixed field AprilTags through a Kalman filter, so we know where
-          we are in TeleOp too &mdash; enough to plan a path from any position for an automatic
-          endgame park.
-        </p>
-      </article>
-
-      <article class="scard reveal">
-        <span class="scard__tag">Tooling</span>
-        <h3>Panels dashboard</h3>
-        <p>
-          Live telemetry and graphs. We watch our autonomous path in real time and tune velocities
-          and servo positions without a rebuild cycle.
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ OUTREACH ============ -->
-<section class="section" id="outreach">
-  <div class="wrap">
-    <header class="section__head reveal">
-      <p class="kicker">05 &mdash; Impact</p>
-      <h2>Outreach</h2>
-      <p class="section__sub">
-        We prioritize outreach where STEM access is limited. Here's where we went and what
-        actually came of it.
-      </p>
-    </header>
-
-    <div class="reachbar reveal">
-      <div><span class="reachbar__n" data-count="200" data-suffix="~">0</span><span>In-person outreach</span></div>
-      <div><span class="reachbar__n" data-count="9000" data-suffix="+">0</span><span>YouTube</span></div>
-      <div><span class="reachbar__n" data-count="550" data-suffix="~">0</span><span>Instagram</span></div>
-      <div><span class="reachbar__n" data-count="370" data-suffix="~">0</span><span>Discord</span></div>
-      <div><span class="reachbar__n" data-count="60" data-suffix="+">0</span><span>GitHub</span></div>
-      <div class="reachbar__total"><span class="reachbar__n" data-count="10180" data-suffix="+">0</span><span>People reached</span></div>
-    </div>
-
-    <div class="grid grid--reach">
-      <article class="rcard rcard--feature reveal">
-        <span class="rcard__tag">International</span>
-        <h3>India outreach</h3>
-        <p>
-          We traveled to a region of India where robotics and engineering education was virtually
-          absent. Across five classes at Madinaguda Government School in Telangana, we presented
-          what robotics is and what careers it opens &mdash; overcoming a complete language barrier
-          to do it. We let students drive a robot we'd built from real FTC parts, then ran a
-          paper-slider engineering competition they went all out on.
-        </p>
-        <p class="rcard__result">
-          <strong>Result:</strong> the school launched an engineering class, giving
-          <strong>400 students</strong> a path into STEM.
-        </p>
-        <blockquote class="mini-quote">
-          The team explained everything in a simple, easy to understand way, which made learning
-          exciting and fun. I now dream of becoming an engineer.
-          <footer>&mdash; Sindhu, 7th grade, Madinaguda Government School (translated)</footer>
-        </blockquote>
-      </article>
-
-      <article class="rcard reveal">
-        <span class="rcard__tag">Local</span>
-        <h3>Redmond Elementary Science Fair</h3>
-        <p>
-          We ran a booth showing kids what <em>FIRST</em> Robotics offers. We talked with about
-          50 kids, around 30 said they wanted to learn more, and we ran out of <em>FIRST</em>
-          pamphlets.
-        </p>
-      </article>
-
-      <article class="rcard reveal">
-        <span class="rcard__tag">Local</span>
-        <h3>Redmond Library workshop</h3>
-        <p>
-          An intro-to-<em>FIRST</em> session capped with a hands-on engineering challenge. About
-          20 kids attended and 15 left interested in starting with <em>FIRST</em>.
-        </p>
-      </article>
-
-      <article class="rcard reveal">
-        <span class="rcard__tag">Service</span>
-        <h3>Meadow Park cleanup</h3>
-        <p>
-          In partnership with the Green Redmond Partnership we cleared bushes and weeds to make room
-          for native shrubs, in a community we all call home.
-        </p>
-      </article>
-
-      <article class="rcard rcard--teams reveal">
-        <span class="rcard__tag">FTC community</span>
-        <h3>Lifting other teams</h3>
-        <ul class="teamlist">
-          <li><strong>23404 Bot Not Found</strong> &mdash; practice scrimmages to sharpen our driving, plus parts swaps whenever either of us was short.</li>
-          <li><strong>32954 Bot Got Found</strong> &mdash; helped start this rookie team and gave them a competitive environment to test in.</li>
-          <li><strong>30624 Pangolins in Disguise</strong> &mdash; practical guidance on planning and running outreaches.</li>
-          <li><strong>12611 TechNova</strong> &mdash; Coach Terry shared season planning advice and their early-season shooter with us.</li>
-          <li><strong>FTC WA Discord</strong> &mdash; handed out cards to new teams so they'd find the same help we did. We've assisted 45+ teams there.</li>
-        </ul>
-      </article>
-
-      <article class="rcard rcard--industry reveal">
-        <span class="rcard__tag">Industry</span>
-        <h3>Learning from engineers</h3>
-        <ul class="teamlist">
-          <li><strong>Meta Reality Labs</strong> &mdash; Vijay showed us how SLAM computer vision works in Project Aria. It's why our robot has custom navigation paths.</li>
-          <li><strong>Microsoft</strong> &mdash; Dilip, who heads a cybersecurity branch, walked us through AI agents, LLMs, agent workflows, and RAG.</li>
-          <li><strong>Amazon fulfillment center</strong> &mdash; a tour of robots transporting, packaging, and sorting at scale. We came back with ideas for our transfer.</li>
-          <li><strong>Microsoft Garage</strong> &mdash; Sriram gave us hands-on time with the laser cutter, which we still use for robot parts.</li>
-        </ul>
-      </article>
-    </div>
-
-    <div class="quotes reveal">
-      <blockquote class="quote">
-        Thank you, Crash Out team, for hosting such an informative FTC session! Your guidance helped
-        me understand how to get started, and thanks to the timelines you shared, I was able to join
-        a team this year with confidence.
-        <footer>&mdash; Anshi, 6th grade</footer>
-      </blockquote>
-      <blockquote class="quote">
-        Crash Out's event introduced me to FLL, helped me join a team, and sparked my love for coding
-        and robotics.
-        <footer>&mdash; Shrvya, 5th grade</footer>
-      </blockquote>
-      <blockquote class="quote">
-        Joining FTC felt natural because the team taught me the skills I needed to contribute and
-        be successful.
-        <footer>&mdash; Niel, rookie member of Crash Out!</footer>
-      </blockquote>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SPONSORS ============ -->
-<section class="section section--alt" id="sponsors">
-  <div class="wrap">
-    <header class="section__head reveal">
-      <p class="kicker">06 &mdash; Support</p>
+    <header class="section__head section__head--center reveal">
+      <p class="kicker">Backed by</p>
       <h2>Our sponsors</h2>
       <p class="section__sub">
-        Sponsorships are how this team exists. They fund the parts we build with and the outreaches
-        we run. If your organization wants to put engineering in front of kids, we'd love to talk.
+        Sponsorships are how this team exists &mdash; they fund the parts we build with and the
+        outreaches we run.
       </p>
     </header>
 
-    <!-- If a logo file is missing, main.js swaps the image for the sponsor's name in text.
-         Drop logos into assets/img/sponsors/ — see the README in that folder. -->
     <ul class="sponsors reveal">
       <li class="sponsor">
         <a href="https://polymaker.com/" target="_blank" rel="noopener">
@@ -698,7 +185,7 @@
         </a>
       </li>
       <li class="sponsor">
-        <a href="#contact">
+        <a href="sponsor.html">
           <img src="assets/img/sponsors/digitech-labs.png" alt="Digitech Labs" loading="lazy">
         </a>
       </li>
@@ -709,69 +196,40 @@
       </li>
     </ul>
 
-    <div class="grid grid--why">
-      <article class="card reveal">
-        <h3>Where the money goes</h3>
-        <p>
-          We estimate a season budget up front from last year's spend, taxes, and the small
-          necessities, then track every purchase in a shared sheet. Before we buy, we review the
-          list again to decide whether each part is genuinely necessary.
-        </p>
-        <ul class="spend">
-          <li><span>Outreach</span><b>25%</b></li>
-          <li><span>Additional parts</span><b>22%</b></li>
-          <li><span><em>FIRST</em> Washington</span><b>10%</b></li>
-          <li><span>Tax</span><b>9%</b></li>
-          <li><span>Unanticipated</span><b>6%</b></li>
-          <li><span>Gamefield set</span><b>4%</b></li>
-          <li><span>Everything else</span><b>24%</b></li>
-        </ul>
-      </article>
-
-      <article class="card card--cta reveal">
-        <h3>Become a sponsor</h3>
-        <p>
-          Your support pays for robot parts, competition registration, and the outreach programs
-          that reached more than 10,000 people last season. In return you get your logo on our
-          robot, our team apparel, our engineering portfolio, and this site &mdash; plus a team
-          that will show up and talk about your work.
-        </p>
-        <a class="btn btn--primary" href="mailto:ftc23405@gmail.com?subject=Sponsoring%20FTC%2023405%20Crash%20Out!">Get in touch</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<section class="section section--contact" id="contact">
-  <div class="wrap contact">
-    <div class="contact__copy reveal">
-      <p class="kicker">07 &mdash; Say hello</p>
-      <h2>Let's talk</h2>
-      <p>
-        Sponsors, mentors, teams looking for help, or a school that wants an outreach visit &mdash;
-        reach out. We answer everything.
-      </p>
-      <a class="btn btn--primary btn--lg" href="mailto:ftc23405@gmail.com">ftc23405@gmail.com</a>
-    </div>
-    <ul class="contact__links reveal">
-      <li><a href="https://youtube.com/@ftc23405" target="_blank" rel="noopener"><span>YouTube</span><small>Season progress &amp; robot reveals</small></a></li>
-      <li><a href="https://instagram.com/ftc23405" target="_blank" rel="noopener"><span>Instagram</span><small>Day-to-day build updates</small></a></li>
-      <li><a href="https://github.com/ftc23405" target="_blank" rel="noopener"><span>GitHub</span><small>Our robot code, open source</small></a></li>
-      <li><a href="https://ftcscout.org/teams/23405" target="_blank" rel="noopener"><span>FTCScout</span><small>Match records &amp; awards</small></a></li>
-    </ul>
+    <p class="center-cta reveal"><a class="btn btn--primary" href="sponsor.html">Become a sponsor</a></p>
   </div>
 </section>
 
 </main>
 
+<!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="wrap footer__inner">
-    <p class="footer__brand"><strong>FTC 23405 &mdash; Crash Out!</strong><br>Redmond, Washington &middot; <em>FIRST</em> Tech Challenge</p>
+    <div class="footer__brand">
+      <p><strong>FTC 23405 &mdash; Crash Out!</strong><br>Redmond, Washington &middot; <em>FIRST</em> Tech Challenge</p>
+      <p><a href="mailto:ftcteam23405@gmail.com">ftcteam23405@gmail.com</a></p>
+    </div>
+
+    <nav class="footer__nav" aria-label="Footer">
+      <a href="about.html">About</a>
+      <a href="robots.html">Robots</a>
+      <a href="awards.html">Awards</a>
+      <a href="impact.html">Impact</a>
+      <a href="sponsor.html">Sponsor Us</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <nav class="footer__social" aria-label="Social">
+      <a href="https://youtube.com/@ftc23405" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://instagram.com/ftc23405" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://github.com/ftcteam23405" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://ftcscout.org/teams/23405" target="_blank" rel="noopener">FTCScout</a>
+    </nav>
+
     <p class="footer__legal">
       <em>FIRST</em>&reg;, <em>FIRST</em>&reg; Tech Challenge, and DECODE<sup>&trade;</sup> are trademarks of
       <em>FIRST</em>&reg;, which is not affiliated with this site.<br>
-      &copy; <span id="year">2026</span> FTC Team 23405. Built by the team.
+      &copy; <span data-year>2026</span> FTC Team 23405. Built by the team.
     </p>
   </div>
 </footer>

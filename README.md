@@ -12,13 +12,40 @@ any file and see the change by refreshing the browser.
 ## Files
 
 ```
-index.html                     the entire site (one page, anchor-linked sections)
+index.html                     home
+about.html                     the team, principles, mentors, goals
+robots.html                    DECODE robot, subsystems, process, software
+awards.html                    award timeline
+impact.html                    outreach
+sponsor.html                   sponsors and sponsorship info
+contact.html                   contact and socials
+
 assets/css/style.css           all styling, brand colors defined at the top
 assets/js/main.js              nav, scroll effects, counters, tabs, accordion
+assets/img/logo.svg            vector fallback team mark
 assets/img/favicon.svg         tab icon
 assets/img/sponsors/           sponsor logos — see the README in that folder
 .nojekyll                      tells GitHub Pages to serve files as-is
 ```
+
+### ⚠️ Add the real logo
+
+The nav loads `assets/img/logo.png`. **That file is not in the repo yet** — until you add it,
+the site falls back to `assets/img/logo.svg`, which is a simplified vector approximation
+(circle, gradient, three bolts) without the "CRASH OUT!" lettering or the drivetrain `H`.
+
+To fix: save the real team logo as **`assets/img/logo.png`** (square, transparent background,
+about 512&times;512 px). Everything picks it up automatically — nav on all seven pages, plus
+the Apple touch icon.
+
+### The nav is duplicated on every page
+
+There's no build step, so the `<header class="nav">` block and the `<footer>` block are copied
+into each of the seven pages. **If you change a nav or footer link, change it in all seven.**
+
+The current page is marked with `aria-current="page"` on its own link — that single attribute
+drives both the highlight styling and screen-reader announcement, so keep it accurate and only
+put it on one nav link per page.
 
 ## Publishing
 
@@ -65,27 +92,35 @@ Change one value and it updates everywhere on the site.
 
 ### Adding a new award
 
-Awards live in the `#awards` section of `index.html` as `<li class="timeline__item">` blocks.
-Copy the newest one, put it at the top of the `<ol class="timeline">`, and edit the date,
-title, event, and description. The three hero badges near the top of the page
-(`.hero__badge-stack`) list the same awards — update those too.
+Awards live in `awards.html` as `<li class="timeline__item">` blocks. Copy the newest one, put
+it at the top of the `<ol class="timeline">`, and edit the date, title, event, and description.
+Two other places show the same awards — update them too:
+
+- the `.awardgrid` count tiles at the top of `awards.html`
+- the three `.badge-card` blocks in the hero of `index.html`
 
 Verified award data comes from https://ftcscout.org/teams/23405
 
 ### Adding an outreach event
 
-In the `#outreach` section, copy any `<article class="rcard">` block and edit it. Add
-`rcard--feature` to the class list if you want the wide highlighted treatment used for the
-India outreach.
+In `impact.html`, copy any `<article class="rcard">` block and edit it. Add `rcard--feature` to
+the class list if you want the wide highlighted treatment used for the India outreach.
 
 ### Adding a sponsor
 
 1. Drop the logo in `assets/img/sponsors/` — see that folder's README for naming and sizing.
-2. Copy a `<li class="sponsor">` block in the `#sponsors` section and point `src` at the new file.
+2. Copy a `<li class="sponsor">` block and point `src` at the new file. The sponsor list appears
+   on **both** `index.html` and `sponsor.html`.
+
+### Adding a page
+
+1. Copy the closest existing page as a starting point.
+2. Add the new link to the `.nav__links` and `.footer__nav` blocks **in all pages**.
+3. On the new page, put `aria-current="page"` on its own nav link and remove it from the others.
 
 ### Updating the robot for a new season
 
-The `#robot` section has two pieces:
+`robots.html` has two interactive pieces:
 
 - **Season tabs** (`#seasonTabs`) — one `<button role="tab">` plus one matching
   `<div class="tabs__panel">` per league meet. The button's `aria-controls` must match the
