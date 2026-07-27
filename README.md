@@ -87,6 +87,29 @@ Then visit http://localhost:8000
 
 ---
 
+## Each new season: the only places that change
+
+The site is deliberately written so that almost nothing outside `impact.html` refers to a
+specific season. When a season ends, you should only need to touch these:
+
+| Where | What |
+|---|---|
+| `robots.html` | Add one `<article class="season">` at the top for the new robot. Change the previous entry's badge from *"20XX&ndash;XX season"* — the badges are dated, not "current"/"previous", so nothing goes stale on its own. |
+| `awards.html` | Add a `<li class="timeline__item">` per new award, and bump the `.awardgrid` count tiles. |
+| `index.html` | The `.badge-card` headline award, and two `data-count` tiles: **Seasons competed** and **Awards won**. |
+| `impact.html` | Outreach and mentorship for the new season, each tagged with its year. Update the `.reachbar` numbers. |
+
+Everything else — About, Industry Connections, Sponsor Us, Contact Us — is written to stay true
+year over year. **If you find yourself editing those for a season change, that's a bug in the
+copy; rewrite the sentence to be season-neutral instead.**
+
+Two specific traps:
+
+- Don't write team size or grade levels ("eight 9th graders"). The site says "high school
+  students" on purpose.
+- Don't write counts that grow ("three awards across three seasons"). Say "every award we've
+  won" and let the list be the source of truth.
+
 ## Editing content
 
 ### Brand colors

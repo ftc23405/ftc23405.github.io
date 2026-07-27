@@ -9,9 +9,16 @@ All four are present and each links to the sponsor's own site.
 | `digitech-labs.png` | Digitech Labs | digitechlabs.com | DECODE portfolio p.17, background keyed out |
 | `microsoft.png` | Microsoft | microsoft.com | DECODE portfolio p.17, background keyed out |
 
-The two portfolio-extracted logos are lower fidelity than an official file would be — they were
-lifted from a 200&nbsp;DPI page render and had the cream page background removed. If you can get
-the official artwork from each company's brand or press page, swap them in.
+### ⚠️ `digitech-labs.png` is out of date
+
+The file here is the **old rainbow** Digitech Labs mark, lifted from the DECODE portfolio. Their
+current logo is the **purple** one (head profile with network nodes, "Digitech Labs" with a ™).
+Save that file over `digitech-labs.png` and update its `width`/`height` in `index.html` and
+`sponsor.html` to the new file's real pixel size.
+
+The two portfolio-extracted logos are lower fidelity than official files — they were lifted from
+a 200&nbsp;DPI page render with the cream page background removed. Prefer official artwork from
+each company's brand or press page.
 
 If a logo file is missing, the site shows the sponsor's name in text instead, taken from the
 `alt` attribute. Nothing breaks; it just looks less polished.
