@@ -632,13 +632,17 @@ ul, ol { margin: 0; padding: 0; }
 /* ==========================================================================
    SPONSORS
    ========================================================================== */
+/* Flex, not a fixed grid: the sponsor count changes between seasons, and flex wraps
+   with the final row centred instead of leaving an orphan hanging on the left. */
 .sponsors {
   list-style: none;
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: flex; flex-wrap: wrap; justify-content: center;
   gap: clamp(.8rem, 2vw, 1.3rem);
   margin-bottom: clamp(1.6rem, 4vw, 2.6rem);
 }
-@media (max-width: 780px) { .sponsors { grid-template-columns: repeat(2, 1fr); } }
+/* 270px basis keeps it to ~3 per row on desktop. Narrower tiles squeeze wide wordmarks
+   down to ~35px tall, which makes taglines unreadable. */
+.sponsor { flex: 1 1 270px; max-width: 340px; }
 .sponsor a {
   display: grid; place-items: center; min-height: 132px;
   background: var(--paper); border: 2.5px solid var(--ink); border-radius: var(--r-lg);

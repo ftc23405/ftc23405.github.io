@@ -1,1 +1,0 @@
-{'numurus.png': (700, 148), 'polymaker.png': (700, 188)}

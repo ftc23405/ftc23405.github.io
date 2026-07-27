@@ -1,37 +1,41 @@
 # Sponsor logos
 
-All four are present and each links to the sponsor's own site.
+Five sponsors, each linking to its own site.
 
-| File | Sponsor | Links to | Source |
+| File | Sponsor | Links to | Status |
 |---|---|---|---|
-| `polymaker.png` | Polymaker | polymaker.com | official logo supplied by the team |
-| `numurus.png` | Numurus | numurus.com | official logo supplied by the team |
-| `digitech-labs.png` | Digitech Labs | digitechlabs.com | DECODE portfolio p.17, background keyed out |
-| `microsoft.png` | Microsoft | microsoft.com | DECODE portfolio p.17, background keyed out |
+| `polymaker.png` | Polymaker | polymaker.com | official logo |
+| `numurus.png` | Numurus | numurus.com | official logo |
+| `digitech-labs.png` | Digitech Labs | digitechlabs.com | official logo |
+| `microsoft.png` | Microsoft | microsoft.com | from DECODE portfolio p.17, background keyed out |
+| `fabworks.png` | Fabworks | fabworks.com | **missing — add this** |
 
-### ⚠️ `digitech-labs.png` is out of date
+Until `fabworks.png` exists, that tile shows the word "Fabworks" in text instead of a logo.
+Nothing breaks; it just looks less polished.
 
-The file here is the **old rainbow** Digitech Labs mark, lifted from the DECODE portfolio. Their
-current logo is the **purple** one (head profile with network nodes, "Digitech Labs" with a ™).
-Save that file over `digitech-labs.png` and update its `width`/`height` in `index.html` and
-`sponsor.html` to the new file's real pixel size.
+`microsoft.png` was lifted from a 200&nbsp;DPI page render of the portfolio, so it's lower
+fidelity than official artwork would be. Worth replacing if you can get the real file.
 
-The two portfolio-extracted logos are lower fidelity than official files — they were lifted from
-a 200&nbsp;DPI page render with the cream page background removed. Prefer official artwork from
-each company's brand or press page.
+## Adding or replacing a logo
 
-If a logo file is missing, the site shows the sponsor's name in text instead, taken from the
-`alt` attribute. Nothing breaks; it just looks less polished.
-
-## Adding or replacing one
-
-1. Save the file here. PNG with a transparent background (SVG works too — update `src`).
-   Around 600&ndash;700 px on the long edge is plenty.
+1. Save the file here. PNG with a transparent background is best (SVG works too — update `src`).
+   600&ndash;700 px on the long edge is plenty.
 2. Update the `<img>` in **both** `index.html` and `sponsor.html`:
-   - `src` and `alt`
-   - `width` and `height` set to the file's **real** pixel size, or the tile will shift as the
-     logo loads
+   - `src` and `alt` (the `alt` text is what the text fallback uses)
+   - `width` and `height` set to the file's **real** pixel size, or the tile shifts as it loads
 3. Wrap it in `<a href="..." target="_blank" rel="noopener">` so it links out.
 
-The site caps rendered height at 72 px and width at the tile width, so wide wordmarks and
-squarer stacked marks come out at a similar visual weight without any per-logo tuning.
+If a logo arrives with a white background instead of transparency, don't just key out every
+white pixel — logos often contain white *inside* the artwork (Digitech Labs has white detail
+inside the head silhouette, and naive keying punches holes in it). Flood-fill inward from the
+image border so only background-connected white is removed.
+
+## Layout
+
+The row is flexbox, not a fixed grid, so it wraps with the last row centred and handles any
+number of sponsors without a CSS change. Each tile is `flex: 1 1 270px; max-width: 340px`,
+which lands at about three per row on desktop and one per row on a phone.
+
+That 270px basis matters: on narrower tiles, wide wordmarks get squeezed to roughly 35 px tall
+and taglines (like Numurus' "SMART SYSTEM SOLUTIONS") stop being readable. Rendered height is
+capped at 72 px, so square marks and wide wordmarks end up at a similar visual weight.
