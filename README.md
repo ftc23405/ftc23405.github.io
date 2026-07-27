@@ -23,8 +23,8 @@ contact.html                   contact and socials
 
 assets/css/style.css           all styling, brand colors defined at the top
 assets/js/main.js              nav, scroll effects, counters, image fallbacks
-assets/img/logo.svg            vector fallback team mark
-assets/img/favicon.svg         tab icon
+assets/img/logo.svg            vector fallback if logo.png is missing
+assets/img/favicon.ico         tab icon (16/32/48/64, from the real logo)
 assets/img/sponsors/           sponsor logos — see the README in that folder
 .nojekyll                      tells GitHub Pages to serve files as-is
 ```
@@ -35,6 +35,7 @@ assets/img/sponsors/           sponsor logos — see the README in that folder
 |---|---|---|
 | `logo.png` | real team logo, 512&times;512, transparent | `Crash Out Logo Final.png`, cropped square |
 | `logo.svg` | vector fallback if `logo.png` is ever missing | hand-drawn approximation |
+| `favicon.ico`, `favicon-32.png`, `icon-192.png` | tab and home-screen icons | generated from `logo.png` |
 | `apple-touch-icon.png` | 180&times;180 home-screen icon | same source as `logo.png` |
 | `robot-decode.jpg` | DECODE 2025&ndash;26 robot | team photo |
 | `robot-itd.jpg` | INTO THE DEEP 2024&ndash;25 robot | ITD portfolio, page 1 |
