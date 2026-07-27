@@ -170,7 +170,8 @@ ul, ol { margin: 0; padding: 0; }
   transition: width .1s linear;
 }
 
-@media (max-width: 900px) {
+/* 1080px, not 900: seven tabs including "Industry Connections" need the room. */
+@media (max-width: 1080px) {
   .nav__toggle { display: grid; }
   .nav__links {
     position: absolute; inset: var(--nav-h) 0 auto 0;
@@ -558,14 +559,19 @@ ul, ol { margin: 0; padding: 0; }
 .grid--reach { grid-template-columns: repeat(6, 1fr); }
 .grid--reach > * { grid-column: span 2; }
 .grid--reach .rcard--feature { grid-column: span 6; }
+.grid--reach .rcard--half { grid-column: span 3; }
 @media (max-width: 940px) {
-  /* Collapse to one track. The span override must repeat the two-class selector above:
+  /* Collapse to one track. The span overrides must repeat the two-class selectors above:
      `.grid--reach > *` alone loses to `.grid--reach .rcard--feature`, and the stale
      `span 6` then forces six implicit columns back into existence. */
   .grid--reach { grid-template-columns: 1fr; }
   .grid--reach > *,
-  .grid--reach .rcard--feature { grid-column: auto; }
+  .grid--reach .rcard--feature,
+  .grid--reach .rcard--half { grid-column: auto; }
 }
+
+.grid--two { grid-template-columns: 1fr 1fr; }
+@media (max-width: 860px) { .grid--two { grid-template-columns: 1fr; } }
 
 .rcard {
   background: var(--paper); border: 2.5px solid var(--ink); border-radius: var(--r-lg);
@@ -633,8 +639,7 @@ ul, ol { margin: 0; padding: 0; }
   margin-bottom: clamp(1.6rem, 4vw, 2.6rem);
 }
 @media (max-width: 780px) { .sponsors { grid-template-columns: repeat(2, 1fr); } }
-/* .sponsor__tile is the same tile without a link, for sponsors whose URL we don't have. */
-.sponsor a, .sponsor__tile {
+.sponsor a {
   display: grid; place-items: center; min-height: 132px;
   background: var(--paper); border: 2.5px solid var(--ink); border-radius: var(--r-lg);
   padding: 1.4rem 1.2rem; box-shadow: var(--shadow-sm);
@@ -735,15 +740,27 @@ ul, ol { margin: 0; padding: 0; }
   border: 2px solid var(--ink);
 }
 .season__badge--past { background: var(--cream-deep); }
-.season h2 { font-size: clamp(1.6rem, 3.4vw, 2.4rem); margin-bottom: .3rem; }
+
+/* A season card with no photo (e.g. a mentored team) is a single column. */
+.season--nomedia { grid-template-columns: 1fr; }
+
+.season h2, .season > .season__body > h3 {
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem); margin-bottom: .3rem;
+  font-weight: 900; letter-spacing: -.02em;
+}
 .season__result {
   font-family: var(--ff-display); font-weight: 800; font-size: .98rem;
   color: var(--magenta); margin: 0 0 .9rem;
 }
 .season__intro { font-size: 1rem; margin-bottom: 1.2rem; }
 
-.season__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.season__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.1rem; }
+.season__cols--full { grid-template-columns: 1fr; }
 @media (max-width: 620px) { .season__cols { grid-template-columns: 1fr; } }
+.season__col h4 {
+  font-size: .76rem; letter-spacing: .14em; text-transform: uppercase;
+  margin-bottom: .6rem; color: var(--ink);
+}
 .season__col {
   background: rgba(247,148,63,.12);
   border-left: 5px solid var(--orange);

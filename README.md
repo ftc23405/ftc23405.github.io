@@ -16,7 +16,8 @@ index.html                     home
 about.html                     the team, principles, mentors, goals
 robots.html                    both robots, highlights, engineering process
 awards.html                    award timeline
-impact.html                    outreach
+impact.html                    outreach + teams we've mentored
+industry.html                  industry connections
 sponsor.html                   sponsors and sponsorship info
 contact.html                   contact and socials
 
@@ -37,16 +38,25 @@ assets/img/sponsors/           sponsor logos — see the README in that folder
 | `apple-touch-icon.png` | 180&times;180 home-screen icon | same source as `logo.png` |
 | `robot-decode.jpg` | DECODE 2025&ndash;26 robot | team photo |
 | `robot-itd.jpg` | INTO THE DEEP 2024&ndash;25 robot | ITD portfolio, page 1 |
-| `outreach-*.jpg` | the four outreaches on the Impact page | both portfolios |
-| `sponsors/*.png` | sponsor logos, page background keyed out | DECODE portfolio, page 17 |
+| `outreach-*.jpg` | the three outreaches on the Impact page | both portfolios |
+| `teams-*.jpg` | mentored-team photos on the Impact page | both portfolios |
+| `industry-*.jpg` | Industry Connections page | DECODE portfolio, page 15 |
+| `sponsors/polymaker.png` | official Polymaker logo | supplied by the team |
+| `sponsors/numurus.png` | official Numurus logo | supplied by the team |
+| `sponsors/digitech-labs.png`, `microsoft.png` | logos with the page background keyed out | DECODE portfolio, page 17 |
 
-**Still missing:** `sponsors/numurus.png`. Until it's added, that tile shows the word
-"Numurus" instead of a logo — nothing breaks. Same for any future sponsor.
+If a sponsor logo file is ever missing, that tile falls back to the sponsor's name in text —
+nothing breaks.
 
 ### The nav is duplicated on every page
 
 There's no build step, so the `<header class="nav">` block and the `<footer>` block are copied
-into each of the seven pages. **If you change a nav or footer link, change it in all seven.**
+into each of the eight pages. **If you change a nav or footer link, change it in all eight** —
+in both the `.nav__links` and the `.footer__nav` list.
+
+The nav collapses to a burger menu below **1080px**, not the more usual 900px, because seven
+tabs including "Industry Connections" need that much room. If you add another tab, re-check
+that width.
 
 The current page is marked with `aria-current="page"` on its own link — that single attribute
 drives both the highlight styling and screen-reader announcement, so keep it accurate and only

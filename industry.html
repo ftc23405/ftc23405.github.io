@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Industry Connections &mdash; Crash Out! FTC 23405</title>
+<meta name="description" content="How FTC Team 23405 learns from working engineers — Meta Reality Labs, Microsoft, Amazon and Bosch — and turns those conversations into robot design decisions.">
+<meta name="theme-color" content="#fdf0e6">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="index.html">
+      <img class="brand__logo" src="assets/img/logo.png" alt="" width="46" height="46"
+           data-fallback="assets/img/logo.svg">
+      <span class="brand__text">
+        <strong>CRASH OUT!</strong>
+        <em>FTC&nbsp;23405</em>
+      </span>
+    </a>
+    <nav class="nav__links" id="navLinks" aria-label="Main">
+      <a href="about.html">About</a>
+      <a href="robots.html">Robots</a>
+      <a href="awards.html">Awards</a>
+      <a href="impact.html">Impact</a>
+      <a href="industry.html" aria-current="page">Industry Connections</a>
+      <a href="sponsor.html">Sponsor Us</a>
+      <a class="nav__cta" href="contact.html">Contact Us</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__progress" id="navProgress" aria-hidden="true"></div>
+</header>
+
+<main id="main">
+
+<section class="pagehero">
+  <div class="wrap">
+    <p class="kicker">Industry Connections</p>
+    <h1>Learning from engineers</h1>
+    <p class="pagehero__lede">
+      We seek out working engineers to learn what's actually new in the field &mdash; then bring it
+      back to the robot. Two of our three awards are Connect Awards, which is the judges saying
+      this part is working.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+
+    <!-- Meta Reality Labs -->
+    <article class="season reveal">
+      <figure class="season__media">
+        <img src="assets/img/industry-meta.jpg"
+             alt="The team with a Meta researcher, each holding a Project Aria tote bag after their visit."
+             loading="lazy" width="480" height="360">
+        <figcaption>Project Aria visit &middot; Meta Reality Labs</figcaption>
+      </figure>
+      <div class="season__body">
+        <span class="season__badge">Computer vision</span>
+        <h2>Meta Reality Labs</h2>
+        <p class="season__result">Vijay &middot; Research Scientist</p>
+        <p class="season__intro">
+          Vijay demonstrated how <strong>SLAM</strong> (Simultaneous Localization and Mapping)
+          computer vision works in Meta's Project Aria AI glasses &mdash; how a device figures out
+          where it is in a space it has never seen before.
+        </p>
+        <div class="season__cols">
+          <div class="season__col season__col--soft">
+            <h3>What it changed on our robot</h3>
+            <ul>
+              <li>Custom navigation paths instead of dead-reckoning alone.</li>
+              <li>The idea of fusing two imperfect position sources, which became our Kalman filter over Pinpoint odometry and AprilTag poses.</li>
+              <li>Machine learning as something we could actually reach for, not just read about.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Microsoft -->
+    <article class="season season--alt reveal">
+      <figure class="season__media">
+        <img src="assets/img/industry-talk.jpg"
+             alt="An engineer presenting slides to the seated team in their build space."
+             loading="lazy" width="480" height="360">
+        <figcaption>AI agents session</figcaption>
+      </figure>
+      <div class="season__body">
+        <span class="season__badge">AI &amp; security</span>
+        <h2>Microsoft</h2>
+        <p class="season__result">Dilip &middot; Head of a cybersecurity branch</p>
+        <p class="season__intro">
+          Dilip gave us an overview of <strong>AI agents</strong> and <strong>large language
+          models</strong>, and explained ideas we'd only seen as buzzwords &mdash; agent workflows
+          and Retrieval-Augmented Generation (RAG).
+        </p>
+        <div class="season__cols">
+          <div class="season__col season__col--soft">
+            <h3>What we took away</h3>
+            <ul>
+              <li>How AI agents are used in real industrial robotics, including inside Amazon fulfillment centers.</li>
+              <li>A clearer sense of where autonomy stops being hand-written logic and starts being learned behaviour.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Amazon -->
+    <article class="season reveal">
+      <figure class="season__media">
+        <img src="assets/img/industry-amazon.jpg"
+             alt="The team standing with two staff members under the Amazon sign inside a fulfillment center."
+             loading="lazy" width="807" height="605">
+        <figcaption>Fulfillment center tour</figcaption>
+      </figure>
+      <div class="season__body">
+        <span class="season__badge">Robotics at scale</span>
+        <h2>Amazon fulfillment center</h2>
+        <p class="season__result">Facility tour</p>
+        <p class="season__intro">
+          We toured a working fulfillment center and watched robotics transport, package and sort
+          items at a scale we'd never seen &mdash; the same problems we solve on a 12-foot field,
+          running all day in a warehouse.
+        </p>
+        <div class="season__cols">
+          <div class="season__col season__col--soft">
+            <h3>What it changed on our robot</h3>
+            <ul>
+              <li>Ideas that fed directly into refining our transfer mechanism.</li>
+              <li>Seeing how industrial systems handle jams and misfeeds, which is exactly the failure mode our transfer kept hitting.</li>
+              <li>A concrete picture of robotics as a career, not just a competition.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Microsoft Garage -->
+    <article class="season season--alt reveal">
+      <figure class="season__media">
+        <img src="assets/img/industry-garage.jpg"
+             alt="A Microsoft employee showing the team fabrication equipment in a workshop."
+             loading="lazy" width="384" height="288">
+        <figcaption>Microsoft Garage &middot; fabrication tools</figcaption>
+      </figure>
+      <div class="season__body">
+        <span class="season__badge">Fabrication</span>
+        <h2>Microsoft Garage</h2>
+        <p class="season__result">Sriram &middot; Microsoft</p>
+        <p class="season__intro">
+          Sriram walked us through the Garage's fabrication tools and what each one is for. The
+          highlight was hands-on time with the <strong>laser cutter</strong>.
+        </p>
+        <div class="season__cols">
+          <div class="season__col season__col--soft">
+            <h3>Still using it</h3>
+            <ul>
+              <li>We continue to use the laser cutter for robot parts when a 3D print isn't the right answer.</li>
+              <li>It widened what we consider buildable &mdash; flat plate geometry became an option alongside printed parts.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ---------- how connections become mentorship ---------- -->
+<section class="section section--alt">
+  <div class="wrap">
+    <header class="section__head reveal">
+      <p class="kicker">The payoff</p>
+      <h2>From a conversation to a mentor</h2>
+      <p class="section__sub">
+        The point of these visits isn't the tour. It's the relationships that outlast it.
+      </p>
+    </header>
+
+    <div class="grid grid--three">
+      <article class="card reveal">
+        <h3>Rachit &mdash; Bosch</h3>
+        <p>
+          Rachit became our mentor through an industry connection. His expertise in math, physics
+          and robotics directly shaped our robot's design and software &mdash; he's the reason we
+          understood why a feedback control loop makes a shooter consistent.
+        </p>
+      </article>
+      <article class="card card--values reveal">
+        <h3>Varun</h3>
+        <p>
+          Varun helped us brainstorm the two-flywheel long-range shooter that became our
+          season-defining design decision, and keeps giving us actionable feedback rather than
+          answers.
+        </p>
+      </article>
+      <article class="card card--values reveal">
+        <h3>Our logo</h3>
+        <p>
+          An industrial graphic designer guided our logo design, keeping it clean but meaningful.
+          The colors show energy and radiate positivity; the lightning bolts stand for energy and
+          the passion to learn.
+        </p>
+      </article>
+    </div>
+
+    <div class="nextup reveal"><a href="sponsor.html">Next: sponsor us &rarr;</a></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__brand">
+      <p><strong>FTC 23405 &mdash; Crash Out!</strong><br>Redmond, Washington &middot; <em>FIRST</em> Tech Challenge</p>
+      <p><a href="mailto:ftcteam23405@gmail.com">ftcteam23405@gmail.com</a></p>
+    </div>
+    <nav class="footer__nav" aria-label="Footer">
+      <a href="about.html">About</a>
+      <a href="robots.html">Robots</a>
+      <a href="awards.html">Awards</a>
+      <a href="impact.html">Impact</a>
+      <a href="industry.html">Industry Connections</a>
+      <a href="sponsor.html">Sponsor Us</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <nav class="footer__social" aria-label="Social">
+      <a href="https://youtube.com/@ftc23405" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://instagram.com/ftc23405" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://github.com/ftcteam23405" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://ftcscout.org/teams/23405" target="_blank" rel="noopener">FTCScout</a>
+    </nav>
+    <p class="footer__legal">
+      <em>FIRST</em>&reg;, <em>FIRST</em>&reg; Tech Challenge, and DECODE<sup>&trade;</sup> are trademarks of
+      <em>FIRST</em>&reg;, which is not affiliated with this site.<br>
+      &copy; <span data-year>2026</span> FTC Team 23405. Built by the team.
+    </p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
