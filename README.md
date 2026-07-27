@@ -1,6 +1,6 @@
 # ftc23405.github.io
 
-The website for **FIRST Tech Challenge Team 23405 — Crash Out!** (Redmond, WA).
+The website for **FIRST Tech Challenge Team 23405 "Crash Out!"** (Redmond, WA).
 
 Live at **https://ftc23405.github.io**
 
