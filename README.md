@@ -14,29 +14,34 @@ any file and see the change by refreshing the browser.
 ```
 index.html                     home
 about.html                     the team, principles, mentors, goals
-robots.html                    DECODE robot, subsystems, process, software
+robots.html                    both robots, highlights, engineering process
 awards.html                    award timeline
 impact.html                    outreach
 sponsor.html                   sponsors and sponsorship info
 contact.html                   contact and socials
 
 assets/css/style.css           all styling, brand colors defined at the top
-assets/js/main.js              nav, scroll effects, counters, tabs, accordion
+assets/js/main.js              nav, scroll effects, counters, image fallbacks
 assets/img/logo.svg            vector fallback team mark
 assets/img/favicon.svg         tab icon
 assets/img/sponsors/           sponsor logos — see the README in that folder
 .nojekyll                      tells GitHub Pages to serve files as-is
 ```
 
-### ⚠️ Add the real logo
+### Images
 
-The nav loads `assets/img/logo.png`. **That file is not in the repo yet** — until you add it,
-the site falls back to `assets/img/logo.svg`, which is a simplified vector approximation
-(circle, gradient, three bolts) without the "CRASH OUT!" lettering or the drivetrain `H`.
+| File | What it is | Source |
+|---|---|---|
+| `logo.png` | real team logo, 512&times;512, transparent | `Crash Out Logo Final.png`, cropped square |
+| `logo.svg` | vector fallback if `logo.png` is ever missing | hand-drawn approximation |
+| `apple-touch-icon.png` | 180&times;180 home-screen icon | same source as `logo.png` |
+| `robot-decode.jpg` | DECODE 2025&ndash;26 robot | team photo |
+| `robot-itd.jpg` | INTO THE DEEP 2024&ndash;25 robot | ITD portfolio, page 1 |
+| `outreach-*.jpg` | the four outreaches on the Impact page | both portfolios |
+| `sponsors/*.png` | sponsor logos, page background keyed out | DECODE portfolio, page 17 |
 
-To fix: save the real team logo as **`assets/img/logo.png`** (square, transparent background,
-about 512&times;512 px). Everything picks it up automatically — nav on all seven pages, plus
-the Apple touch icon.
+**Still missing:** `sponsors/numurus.png`. Until it's added, that tile shows the word
+"Numurus" instead of a logo — nothing breaks. Same for any future sponsor.
 
 ### The nav is duplicated on every page
 
@@ -97,7 +102,7 @@ it at the top of the `<ol class="timeline">`, and edit the date, title, event, a
 Two other places show the same awards — update them too:
 
 - the `.awardgrid` count tiles at the top of `awards.html`
-- the three `.badge-card` blocks in the hero of `index.html`
+- the `.badge-card` headline award in the hero of `index.html`
 
 Verified award data comes from https://ftcscout.org/teams/23405
 
@@ -118,26 +123,38 @@ the class list if you want the wide highlighted treatment used for the India out
 2. Add the new link to the `.nav__links` and `.footer__nav` blocks **in all pages**.
 3. On the new page, put `aria-current="page"` on its own nav link and remove it from the others.
 
-### Updating the robot for a new season
+### Adding a season to the Robots page
 
-`robots.html` has two interactive pieces:
+Each season is one `<article class="season">` holding a photo and two highlight columns
+(mechanical, software). Copy the newest one, put it at the top, and swap in the photo, the
+result line, and the bullets. Add `season--alt` to alternate which side the photo sits on —
+the existing two alternate, so keep that going.
 
-- **Season tabs** (`#seasonTabs`) — one `<button role="tab">` plus one matching
-  `<div class="tabs__panel">` per league meet. The button's `aria-controls` must match the
-  panel's `id`, and every panel except the first needs the `hidden` attribute.
-- **Subsystem accordion** (`#subsystems`) — one `<details class="acc">` per mechanism, with a
-  `<div class="step">` per version. Add `step--final` to the version you actually competed with.
+Only the **final** robot for each season is shown, on purpose. The blow-by-blow league-meet
+progression lives in the engineering portfolio, not here.
+
+### A note on the grid CSS
+
+`.grid--about` and `.grid--reach` are 6-column grids whose children use `grid-column: span N`.
+When they collapse at narrow widths, the media query has to repeat the *two-class* selectors
+(e.g. `.grid--reach .rcard--feature`) when resetting `grid-column: auto`. Overriding only
+`.grid--reach > *` loses the specificity contest, and the leftover `span 6` silently
+re-creates six columns on mobile. There are comments in the CSS at both spots.
 
 ### Adding photos
 
-The site is currently text-and-type only, which keeps it fast. To add a photo inside any card:
+Wrap the image in a figure so it picks up the border and rounding:
 
 ```html
-<img src="assets/img/your-photo.jpg" alt="Describe what's happening" loading="lazy"
-     style="border:2.5px solid var(--ink); border-radius:16px; margin-top:1rem;">
+<figure class="rcard__photo">
+  <img src="assets/img/your-photo.jpg" alt="Describe what's happening"
+       loading="lazy" width="512" height="384">
+</figure>
 ```
 
-Compress photos before committing them — aim for under 300 KB each.
+Always set `width` and `height` to the file's real pixel size — without them the page jumps
+as images load. Resize and compress before committing; aim for under 250 KB each and no more
+than about 1400 px on the long edge.
 
 ---
 
@@ -147,12 +164,12 @@ Please keep these intact when editing:
 
 - Every image needs a real `alt` describing what it shows.
 - Section headings step down in order (`h2` → `h3` → `h4`); don't skip levels for looks.
-- The tabs are keyboard-navigable with arrow keys, Home, and End. If you add a tab, keep the
-  `role`, `aria-controls`, and `aria-selected` attributes consistent.
+- `alt=""` is correct only for purely decorative images (the nav logo, which sits next to the
+  team name in text). Every photo needs a real description.
 - The site respects `prefers-reduced-motion` — animations and counters go static for users
   who ask for that. Don't add motion that ignores it.
 
 ---
 
-*FIRST*®, *FIRST*® Tech Challenge, and DECODE™ are trademarks of *FIRST*®, which is not
-affiliated with this site.
+*FIRST*®, *FIRST*® Tech Challenge, DECODE™ and INTO THE DEEP™ are trademarks of *FIRST*®,
+which is not affiliated with this site.

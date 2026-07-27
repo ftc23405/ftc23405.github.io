@@ -370,10 +370,16 @@ ul, ol { margin: 0; padding: 0; }
 .grid--about > * { grid-column: span 3; }
 .grid--about .card--wide { grid-column: span 6; }
 .grid--about .card--goals { grid-column: span 6; }
+.grid--about .card--quote { grid-column: span 6; }
 @media (max-width: 880px) {
-  /* Collapse the track itself, so children don't need span overrides. */
+  /* Collapse to one track. The span overrides below must repeat the two-class selectors
+     above: `.grid--about > *` alone loses the specificity contest to
+     `.grid--about .card--wide`, leaving a stale span that re-creates the extra columns. */
   .grid--about { grid-template-columns: 1fr; }
-  .grid--about > * { grid-column: auto; }
+  .grid--about > *,
+  .grid--about .card--wide,
+  .grid--about .card--goals,
+  .grid--about .card--quote { grid-column: auto; }
 }
 
 .card {
@@ -466,111 +472,6 @@ ul, ol { margin: 0; padding: 0; }
   border: 2px solid var(--ink); background: var(--amber); color: var(--ink);
 }
 
-/* ==========================================================================
-   ROBOT — tabs
-   ========================================================================== */
-.tabs {
-  border: 3px solid var(--ink); border-radius: var(--r-lg);
-  background: var(--paper); overflow: hidden; box-shadow: var(--shadow-md);
-}
-.tabs__list { display: flex; overflow-x: auto; background: var(--cream-deep); border-bottom: 3px solid var(--ink); scrollbar-width: thin; }
-.tabs__list button {
-  flex: 1 0 auto; appearance: none; cursor: pointer;
-  font-family: var(--ff-display); font-weight: 800; font-size: .95rem;
-  padding: .95rem 1.3rem; border: 0; border-right: 2px solid rgba(18,16,20,.18);
-  background: transparent; color: var(--ink-mute); white-space: nowrap;
-  transition: background .2s ease, color .2s ease;
-}
-.tabs__list button:last-child { border-right: 0; }
-.tabs__list button:hover { background: rgba(239,29,128,.09); color: var(--ink); }
-.tabs__list button[aria-selected="true"] {
-  background: var(--grad-brand); color: var(--ink);
-  box-shadow: inset 0 -5px 0 var(--ink);
-}
-.tabs__panel { padding: clamp(1.3rem, 2.6vw, 2rem); }
-.tabs__panel[hidden] { display: none; }
-
-.verdict { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.4vw, 1.8rem); }
-.verdict--single { grid-template-columns: 1fr; }
-@media (max-width: 760px) { .verdict { grid-template-columns: 1fr; } }
-.verdict__col { border-radius: var(--r-md); padding: 1.15rem 1.25rem; border: 2px solid var(--ink); }
-.verdict__col h4 {
-  margin: 0 0 .7rem; font-size: .78rem; letter-spacing: .14em;
-  text-transform: uppercase;
-}
-.verdict__col ul { list-style: none; display: grid; gap: .5rem; }
-.verdict__col li { position: relative; padding-left: 1.3rem; font-size: .95rem; }
-.verdict__col li::before {
-  position: absolute; left: 0; top: 0; font-weight: 800;
-}
-.verdict__col--good { background: rgba(255,207,77,.26); }
-.verdict__col--good h4 { color: #1c7a4a; }
-.verdict__col--good li::before { content: "✓"; color: #1c7a4a; }
-.verdict__col--bad { background: rgba(255,61,154,.12); }
-.verdict__col--bad h4 { color: var(--magenta); }
-.verdict__col--bad li::before { content: "✕"; color: var(--magenta); }
-.verdict__learn {
-  margin: 1.3rem 0 0; padding: 1rem 1.15rem;
-  background: var(--ink); color: rgba(255,250,245,.9);
-  border-radius: var(--r-md); font-size: .96rem;
-}
-.verdict__learn strong { color: var(--amber); }
-
-/* accordion */
-.accordion { display: grid; gap: .9rem; }
-.acc {
-  background: var(--paper); border: 2.5px solid var(--ink);
-  border-radius: var(--r-lg); box-shadow: var(--shadow-sm); overflow: hidden;
-}
-.acc summary {
-  display: flex; align-items: center; gap: 1rem;
-  padding: 1.05rem clamp(1.1rem, 2vw, 1.6rem);
-  cursor: pointer; list-style: none;
-  background: var(--cream-deep);
-  transition: background .2s ease;
-}
-.acc summary::-webkit-details-marker { display: none; }
-.acc summary:hover { background: rgba(255,207,77,.45); }
-.acc[open] summary { background: var(--grad-brand); border-bottom: 2.5px solid var(--ink); }
-.acc__title {
-  flex: 1; font-family: var(--ff-display); font-weight: 900;
-  font-size: clamp(1.05rem, 2vw, 1.3rem); color: var(--ink); letter-spacing: -.015em;
-}
-.acc__vers {
-  font-family: var(--ff-display); font-weight: 800; font-size: .76rem;
-  letter-spacing: .1em; text-transform: uppercase;
-  background: var(--ink); color: var(--cream);
-  padding: .3rem .75rem; border-radius: var(--r-pill);
-}
-.acc summary::after {
-  content: ""; width: .6rem; height: .6rem; flex: none;
-  border: 2.5px solid var(--ink); border-top: 0; border-left: 0;
-  transform: rotate(45deg) translateY(-2px); transition: transform .25s ease;
-}
-.acc[open] summary::after { transform: rotate(225deg) translateY(-2px); }
-.acc__body { padding: clamp(1.1rem, 2vw, 1.6rem); }
-
-.steps { display: grid; gap: .85rem; }
-.step {
-  border-left: 5px solid var(--orange);
-  background: rgba(247,148,63,.1);
-  border-radius: 0 var(--r-md) var(--r-md) 0;
-  padding: .95rem 1.1rem;
-}
-.step--final { border-left-color: var(--magenta); background: rgba(239,29,128,.09); }
-.step__label {
-  display: inline-block; margin-bottom: .35rem;
-  font-family: var(--ff-display); font-weight: 800; font-size: .76rem;
-  letter-spacing: .12em; text-transform: uppercase; color: var(--magenta);
-}
-.step p { font-size: .96rem; }
-.step__risk {
-  margin-top: .7rem; padding-top: .7rem;
-  border-top: 2px dashed rgba(18,16,20,.2);
-  font-size: .9rem; color: var(--ink-mute);
-}
-.step__risk strong { color: var(--ink); }
-
 /* process */
 .process {
   list-style: none;
@@ -657,12 +558,13 @@ ul, ol { margin: 0; padding: 0; }
 .grid--reach { grid-template-columns: repeat(6, 1fr); }
 .grid--reach > * { grid-column: span 2; }
 .grid--reach .rcard--feature { grid-column: span 6; }
-.grid--reach .rcard--teams,
-.grid--reach .rcard--industry { grid-column: span 3; }
 @media (max-width: 940px) {
-  /* Collapse the track itself, so children don't need span overrides. */
+  /* Collapse to one track. The span override must repeat the two-class selector above:
+     `.grid--reach > *` alone loses to `.grid--reach .rcard--feature`, and the stale
+     `span 6` then forces six implicit columns back into existence. */
   .grid--reach { grid-template-columns: 1fr; }
-  .grid--reach > * { grid-column: auto; }
+  .grid--reach > *,
+  .grid--reach .rcard--feature { grid-column: auto; }
 }
 
 .rcard {
@@ -731,14 +633,17 @@ ul, ol { margin: 0; padding: 0; }
   margin-bottom: clamp(1.6rem, 4vw, 2.6rem);
 }
 @media (max-width: 780px) { .sponsors { grid-template-columns: repeat(2, 1fr); } }
-.sponsor a {
-  display: grid; place-items: center; min-height: 118px;
+/* .sponsor__tile is the same tile without a link, for sponsors whose URL we don't have. */
+.sponsor a, .sponsor__tile {
+  display: grid; place-items: center; min-height: 132px;
   background: var(--paper); border: 2.5px solid var(--ink); border-radius: var(--r-lg);
   padding: 1.4rem 1.2rem; box-shadow: var(--shadow-sm);
   transition: transform .2s ease, box-shadow .2s ease;
 }
 .sponsor a:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
-.sponsor img { max-height: 56px; width: auto; object-fit: contain; }
+/* Cap height AND width so wide wordmarks and squarer stacked marks land at a
+   similar visual weight instead of the square ones looking tiny. */
+.sponsor img { max-height: 72px; max-width: 100%; width: auto; object-fit: contain; }
 .sponsor__fallback {
   font-family: var(--ff-display); font-weight: 800; font-size: 1.15rem;
   color: var(--ink); text-align: center; letter-spacing: -.01em;
@@ -791,6 +696,99 @@ ul, ol { margin: 0; padding: 0; }
 .footer { background: var(--ink); color: rgba(255,250,245,.6); padding: 2.8rem 0; }
 .footer__brand strong { font-family: var(--ff-display); font-weight: 800; }
 .footer em { color: var(--amber); font-style: italic; }
+
+/* ==========================================================================
+   SEASON CARDS (Robots page) — one per season, final robot only
+   ========================================================================== */
+.season {
+  display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr);
+  gap: clamp(1.2rem, 3vw, 2.4rem); align-items: start;
+  background: var(--paper); border: 3px solid var(--ink); border-radius: var(--r-lg);
+  padding: clamp(1.2rem, 2.6vw, 2rem);
+  box-shadow: var(--shadow-md);
+  margin-bottom: clamp(1.4rem, 3vw, 2.2rem);
+}
+.season--alt { grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr); }
+.season--alt .season__media { order: 2; }
+@media (max-width: 860px) {
+  .season, .season--alt { grid-template-columns: 1fr; }
+  .season--alt .season__media { order: 0; }
+}
+
+.season__media {
+  margin: 0; border: 2.5px solid var(--ink); border-radius: var(--r-md);
+  overflow: hidden; background: var(--cream-deep);
+}
+.season__media img { width: 100%; height: auto; display: block; }
+.season__media figcaption {
+  padding: .55rem .8rem; font-size: .78rem; font-weight: 600;
+  color: var(--ink-mute); background: var(--cream-deep);
+  border-top: 2px solid var(--ink);
+}
+
+.season__badge {
+  display: inline-block; margin-bottom: .7rem;
+  font-family: var(--ff-display); font-weight: 800; font-size: .7rem;
+  letter-spacing: .16em; text-transform: uppercase;
+  background: var(--grad-brand); color: var(--ink);
+  padding: .3rem .8rem; border-radius: var(--r-pill);
+  border: 2px solid var(--ink);
+}
+.season__badge--past { background: var(--cream-deep); }
+.season h2 { font-size: clamp(1.6rem, 3.4vw, 2.4rem); margin-bottom: .3rem; }
+.season__result {
+  font-family: var(--ff-display); font-weight: 800; font-size: .98rem;
+  color: var(--magenta); margin: 0 0 .9rem;
+}
+.season__intro { font-size: 1rem; margin-bottom: 1.2rem; }
+
+.season__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 620px) { .season__cols { grid-template-columns: 1fr; } }
+.season__col {
+  background: rgba(247,148,63,.12);
+  border-left: 5px solid var(--orange);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  padding: .95rem 1.05rem;
+}
+.season__col--soft { background: rgba(239,29,128,.08); border-left-color: var(--magenta); }
+.season__col h3 {
+  font-size: .76rem; letter-spacing: .14em; text-transform: uppercase;
+  margin-bottom: .6rem; color: var(--ink);
+}
+.season__col ul { list-style: none; display: grid; gap: .5rem; }
+.season__col li { position: relative; padding-left: 1.1rem; font-size: .93rem; }
+.season__col li::before {
+  content: ""; position: absolute; left: 0; top: .58em;
+  width: .4rem; height: .4rem; border-radius: 50%; background: var(--ink);
+}
+.season__col--soft li::before { background: var(--magenta); }
+
+/* photo inside an outreach card */
+.rcard__photo {
+  margin: 0 0 1.1rem; border: 2.5px solid var(--ink); border-radius: var(--r-md);
+  overflow: hidden; background: var(--cream-deep);
+}
+.rcard__photo img { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 4 / 3; }
+
+/* The feature card is full-bleed across the grid, so its portrait photo goes beside the
+   text rather than above it — otherwise the image is taller than the whole viewport. */
+.rcard--feature {
+  display: grid; grid-template-columns: minmax(0,.4fr) minmax(0,1fr);
+  gap: clamp(1.2rem, 2.6vw, 2.1rem); align-items: start;
+}
+.rcard--feature .rcard__photo { margin: 0; }
+.rcard--feature .rcard__photo img { aspect-ratio: 3 / 4; }
+@media (max-width: 780px) {
+  .rcard--feature { grid-template-columns: 1fr; }
+  .rcard--feature .rcard__photo img { aspect-ratio: 4 / 3; }
+}
+
+/* hero robot photo (home) */
+.hero__shot {
+  margin: 0; border: 3px solid var(--ink); border-radius: var(--r-lg);
+  overflow: hidden; box-shadow: var(--shadow-md); background: var(--cream-deep);
+}
+.hero__shot img { width: 100%; height: auto; display: block; }
 
 /* ==========================================================================
    PAGE HERO (every page except home)

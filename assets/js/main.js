@@ -170,44 +170,6 @@
     }, 3000);
   }
 
-  /* ---------- season progression tabs ---------- */
-  var tabsRoot = document.getElementById("seasonTabs");
-
-  if (tabsRoot) {
-    var tabButtons = Array.prototype.slice.call(
-      tabsRoot.querySelectorAll('[role="tab"]')
-    );
-
-    function selectTab(btn, focus) {
-      tabButtons.forEach(function (b) {
-        var selected = b === btn;
-        b.setAttribute("aria-selected", String(selected));
-        b.tabIndex = selected ? 0 : -1;
-        var panel = document.getElementById(b.getAttribute("aria-controls"));
-        if (panel) panel.hidden = !selected;
-      });
-      if (focus) btn.focus();
-    }
-
-    tabButtons.forEach(function (btn, i) {
-      btn.tabIndex = btn.getAttribute("aria-selected") === "true" ? 0 : -1;
-
-      btn.addEventListener("click", function () { selectTab(btn, false); });
-
-      btn.addEventListener("keydown", function (e) {
-        var next = null;
-        if (e.key === "ArrowRight") next = tabButtons[(i + 1) % tabButtons.length];
-        else if (e.key === "ArrowLeft") next = tabButtons[(i - 1 + tabButtons.length) % tabButtons.length];
-        else if (e.key === "Home") next = tabButtons[0];
-        else if (e.key === "End") next = tabButtons[tabButtons.length - 1];
-        if (next) {
-          e.preventDefault();
-          selectTab(next, true);
-        }
-      });
-    });
-  }
-
   /* ---------- sponsor logo fallback ---------- */
   /* A missing logo file degrades to the sponsor's name in text instead of a broken image.
      The name comes from the img's alt, so alt text is the single source of truth. */
@@ -224,18 +186,4 @@
     if (img.complete && img.naturalWidth === 0) sponsorFallback(img);
   });
 
-  /* ---------- accordion: one open at a time ---------- */
-  var accordion = document.getElementById("subsystems");
-
-  if (accordion) {
-    var panels = Array.prototype.slice.call(accordion.querySelectorAll("details"));
-    panels.forEach(function (panel) {
-      panel.addEventListener("toggle", function () {
-        if (!panel.open) return;
-        panels.forEach(function (other) {
-          if (other !== panel) other.open = false;
-        });
-      });
-    });
-  }
 })();

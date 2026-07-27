@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Robots &mdash; Crash Out! FTC 23405</title>
-<meta name="description" content="The DECODE 2025-26 robot from FTC Team 23405: season-by-season iteration, subsystem version history, engineering process, and software.">
+<meta name="description" content="The robots of FTC Team 23405: the DECODE 2025-26 far-zone shooter and the INTO THE DEEP 2024-25 specimen scorer, with mechanical and software highlights.">
 <meta name="theme-color" content="#fdf0e6">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/img/logo.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -48,201 +48,112 @@
 <section class="pagehero">
   <div class="wrap">
     <p class="kicker">Robots</p>
-    <h1>DECODE 2025&ndash;26</h1>
+    <h1>Our robots</h1>
     <p class="pagehero__lede">
-      We started the season as a close-range shooter with no indexing. We chose to challenge
-      ourselves and pursue the far launch zone instead &mdash; to offer differentiated value and
-      create real synergy with our alliance partners.
+      Two competition seasons, two very different machines. Each one is the final version we
+      actually competed with, plus what mattered most in hardware and in code.
     </p>
   </div>
 </section>
 
-<!-- ---------- season progression ---------- -->
 <section class="section">
   <div class="wrap">
-    <header class="section__head reveal">
-      <p class="kicker">Season progression</p>
-      <h2>Four meets, four robots</h2>
-      <p class="section__sub">Nothing here was right the first time.</p>
-    </header>
 
-    <div class="tabs reveal" id="seasonTabs">
-      <div class="tabs__list" role="tablist" aria-label="Season progression">
-        <button role="tab" id="tab-lm0" aria-controls="panel-lm0" aria-selected="true">League Meet 0</button>
-        <button role="tab" id="tab-lm1" aria-controls="panel-lm1" aria-selected="false">League Meet 1</button>
-        <button role="tab" id="tab-lm2" aria-controls="panel-lm2" aria-selected="false">League Meet 2</button>
-        <button role="tab" id="tab-il" aria-controls="panel-il" aria-selected="false">Interleague</button>
-      </div>
+    <!-- ---------- DECODE 2025-26 ---------- -->
+    <article class="season reveal">
+      <figure class="season__media">
+        <img src="assets/img/robot-decode.jpg"
+             alt="The DECODE 2025-26 robot: a wooden-panelled chassis with a double flywheel shooter, rubber-band intake and a ramp, marked 23405."
+             loading="lazy" width="1050" height="1400">
+        <figcaption>DECODE 2025&ndash;26 &mdash; final Interleague configuration</figcaption>
+      </figure>
 
-      <div class="tabs__panels">
-        <div class="tabs__panel" role="tabpanel" id="panel-lm0" aria-labelledby="tab-lm0">
-          <div class="verdict">
-            <div class="verdict__col verdict__col--good">
-              <h3>Worked</h3>
-              <ul><li>Could block other robots from scoring</li><li>Fast drivetrain on 435&nbsp;RPM motors</li></ul>
-            </div>
-            <div class="verdict__col verdict__col--bad">
-              <h3>Didn't</h3>
-              <ul>
-                <li>Couldn't hold three artifacts</li>
-                <li>Shooter inconsistent and broke apart easily</li>
-                <li>Transfer inconsistent; flywheel ripped apart often</li>
-                <li>Drivetrain bevel gears kept coming apart</li>
-              </ul>
-            </div>
+      <div class="season__body">
+        <span class="season__badge">Current season</span>
+        <h2>DECODE 2025&ndash;26</h2>
+        <p class="season__result">🥉 3rd Place Inspire Award &middot; Feynman League Tournament</p>
+        <p class="season__intro">
+          We started the season shooting from close range with no indexing. We chose to challenge
+          ourselves and pursue the far launch zone instead &mdash; to offer differentiated value and
+          create real synergy with our alliance partners.
+        </p>
+
+        <div class="season__cols">
+          <div class="season__col">
+            <h3>Mechanical highlights</h3>
+            <ul>
+              <li><strong>Double-flywheel shooter</strong> on a ramp with an added lip, which fixed our launch angle and made far-zone shots consistent.</li>
+              <li><strong>Rubber-band intake</strong> with a curved funnel that holds three artifacts and stops them slipping back out.</li>
+              <li><strong>Crescent transfer</strong> on a positional servo, whose geometry acts as a physical hardstop so only one artifact reaches the shooter at a time.</li>
+              <li><strong>Chain-driven drivetrain</strong> after bevel gears kept separating under load.</li>
+            </ul>
           </div>
-          <p class="verdict__learn"><strong>Takeaway:</strong> fast cycle times matter more than raw capability. We rebuilt around a ramp and a simple double-motor flywheel shooter.</p>
-        </div>
-
-        <div class="tabs__panel" role="tabpanel" id="panel-lm1" aria-labelledby="tab-lm1" hidden>
-          <div class="verdict">
-            <div class="verdict__col verdict__col--good">
-              <h3>Worked</h3>
-              <ul><li>Held three artifacts</li><li>Reliable shooting</li><li>Intake funnel guided artifacts in</li></ul>
-            </div>
-            <div class="verdict__col verdict__col--bad">
-              <h3>Didn't</h3>
-              <ul>
-                <li>Artifacts fell out after intaking through the shooter</li>
-                <li>Couldn't shoot far consistently</li>
-                <li>Transfer had dead spots</li>
-                <li>Slow intake; couldn't reach corner artifacts</li>
-              </ul>
-            </div>
+          <div class="season__col season__col--soft">
+            <h3>Software highlights</h3>
+            <ul>
+              <li><strong>Limelight 3A auto-aim</strong> &mdash; PIDF on robot heading drives AprilTag error to zero, so drivers stop burning seconds lining up.</li>
+              <li><strong>Velocity PIDF + low-pass filter</strong> to hold flywheel RPM steady as each artifact passes through.</li>
+              <li><strong>Kalman filter fusion</strong> of goBILDA Pinpoint odometry with field AprilTag poses, correcting drift over a 2.5-minute match.</li>
+              <li><strong>Pedro Pathing</strong> autonomous and field-centric TeleOp, built on NextFTC commands.</li>
+            </ul>
           </div>
-          <p class="verdict__learn"><strong>Takeaway:</strong> the straight ramp bought us distance but cost us contact time with the artifact.</p>
-        </div>
-
-        <div class="tabs__panel" role="tabpanel" id="panel-lm2" aria-labelledby="tab-lm2" hidden>
-          <div class="verdict">
-            <div class="verdict__col verdict__col--good">
-              <h3>Worked</h3>
-              <ul><li>Stored three artifacts well</li><li>Efficient transfer, far fewer jams</li><li>Could shoot from far <em>and</em> close</li></ul>
-            </div>
-            <div class="verdict__col verdict__col--bad">
-              <h3>Didn't</h3>
-              <ul><li>Shooting still inconsistent</li><li>Repeated robot disconnection issues</li><li>Inconsistent autonomous</li></ul>
-            </div>
-          </div>
-          <p class="verdict__learn"><strong>Takeaway:</strong> adding a lip to the ramp fixed the shooting geometry. Consistency was now a software problem, not a hardware one.</p>
-        </div>
-
-        <div class="tabs__panel" role="tabpanel" id="panel-il" aria-labelledby="tab-il" hidden>
-          <div class="verdict verdict--single">
-            <div class="verdict__col verdict__col--good">
-              <h3>Key features</h3>
-              <ul>
-                <li>Reliable shooting with Limelight auto-aim</li>
-                <li>Consistent scoring from the far launch zone</li>
-                <li>Reworked transfer that indexes one artifact at a time</li>
-                <li>Consistent autonomous built on Pedro Pathing</li>
-              </ul>
-            </div>
-          </div>
-          <p class="verdict__learn"><strong>Result:</strong> 3rd Place Inspire Award at the Feynman League Tournament.</p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </article>
 
-<!-- ---------- subsystems ---------- -->
-<section class="section section--alt">
-  <div class="wrap">
-    <header class="section__head reveal">
-      <p class="kicker">Subsystems</p>
-      <h2>Every mechanism is a version number</h2>
-      <p class="section__sub">Here's how each one got where it ended up.</p>
-    </header>
+    <!-- ---------- INTO THE DEEP 2024-25 ---------- -->
+    <article class="season season--alt reveal">
+      <figure class="season__media">
+        <img src="assets/img/robot-itd.jpg"
+             alt="The INTO THE DEEP 2024-25 robot: a scissor lift with a white basket, a linear slide tower and a pyramid claw, marked 23405."
+             loading="lazy" width="606" height="807">
+        <figcaption>INTO THE DEEP 2024&ndash;25 &mdash; final Semifinals configuration</figcaption>
+      </figure>
 
-    <div class="accordion reveal" id="subsystems">
-      <details class="acc" open>
-        <summary>
-          <span class="acc__title">Shooter</span>
-          <span class="acc__vers">V1 &rarr; V3</span>
-        </summary>
-        <div class="acc__body">
-          <div class="steps">
-            <div class="step">
-              <span class="step__label">V1 &middot; LM0</span>
-              <p>Semi-hooded design, two rhino wheels at center, driven by two motors through bevel gears. Great contact with the artifact &mdash; but it couldn't shoot far enough.</p>
-            </div>
-            <div class="step">
-              <span class="step__label">V2 &middot; LM1</span>
-              <p>Two flywheels and a straight ramp. Shot much farther and complemented close-shooting alliance partners, but we lost contact time and artifacts didn't launch high enough. Varun helped us brainstorm this direction.</p>
-            </div>
-            <div class="step step--final">
-              <span class="step__label">V3 &middot; LM2</span>
-              <p>Kept the V2 long-range geometry and added a lip as a workaround for the launch-angle problem. Result: a consistent shooter that could still reach the far zone.</p>
-            </div>
+      <div class="season__body">
+        <span class="season__badge season__badge--past">Previous season</span>
+        <h2>INTO THE DEEP 2024&ndash;25</h2>
+        <p class="season__result">🥇 1st Place Connect &middot; 🥈 2nd Place Connect</p>
+        <p class="season__intro">
+          We set out to be a versatile alliance partner able to score both samples and specimens,
+          then specialised in specimens for differentiated value once we saw how many teams were
+          strong on samples. The final robot scored a consistent 11&ndash;12 specimens per match
+          across auto and TeleOp.
+        </p>
+
+        <div class="season__cols">
+          <div class="season__col">
+            <h3>Mechanical highlights</h3>
+            <ul>
+              <li><strong>Scissor lift</strong> for the basket, which made wiring routing dramatically cleaner than a tower alone.</li>
+              <li><strong>Pyramid claw</strong> shaped to match the game element, 3D printed and driven by a servo gear train on linear slides.</li>
+              <li><strong>Narrowed, slanted claw</strong> so it could take a sample out of a crowded submersible without fouling its other jaw.</li>
+              <li><strong>Longer intake U-channel</strong> and a faster linear-slide motor to extend reach and cut cycle time.</li>
+            </ul>
+          </div>
+          <div class="season__col season__col--soft">
+            <h3>Software highlights</h3>
+            <ul>
+              <li><strong>Custom PIDF with cosine feedforward</strong>, giving the arm more power at angles where gravity fights it.</li>
+              <li><strong>goBILDA Pinpoint odometry</strong> (deadwheels + IMU) for reliable localization in autonomous.</li>
+              <li><strong>Road Runner</strong> trajectories with tuned velocity, visualised in <strong>MeepMeep</strong> so we could path without the field.</li>
+              <li><strong>Field-centric drive</strong> using the Control Hub IMU, plus FTC Dashboard for live tuning.</li>
+            </ul>
           </div>
         </div>
-      </details>
+      </div>
+    </article>
 
-      <details class="acc">
-        <summary>
-          <span class="acc__title">Intake</span>
-          <span class="acc__vers">3 revisions</span>
-        </summary>
-        <div class="acc__body">
-          <div class="steps">
-            <div class="step">
-              <span class="step__label">LM0</span>
-              <p>A row of Gecko wheels driven by a motor and bevel gears. Worked as a ground intake, but couldn't transfer and missed artifacts.</p>
-            </div>
-            <div class="step">
-              <span class="step__label">LM1</span>
-              <p>Mecanum wheels plus Gecko wheels, with a funnel to widen our reach. The mecanums countered artifact rotation and cut transfer inconsistency &mdash; but corners were still unreachable and it couldn't hold three at once.</p>
-            </div>
-            <div class="step step--final">
-              <span class="step__label">LM2 &rarr; Interleague</span>
-              <p>Switched to a rubber-band intake with a more curved funnel geometry. Held three artifacts and stopped them slipping back out of the ramp.</p>
-            </div>
-          </div>
-        </div>
-      </details>
-
-      <details class="acc">
-        <summary>
-          <span class="acc__title">Transfer</span>
-          <span class="acc__vers">V1 &rarr; V5</span>
-        </summary>
-        <div class="acc__body">
-          <div class="steps">
-            <div class="step">
-              <span class="step__label">V1</span>
-              <p>Two custom TPU rollers on a continuous-rotation servo. Delicate, jam-prone, and hard to mount.</p>
-            </div>
-            <div class="step">
-              <span class="step__label">V2</span>
-              <p>A single Gecko wheel on a shaft pushing artifacts into the shooter. Mounted cleanly and transferred well, but often pushed more than one artifact through, with dead spots and compression problems.</p>
-            </div>
-            <div class="step">
-              <span class="step__label">V3 &middot; LM1</span>
-              <p>Back to V1, widened for more contact. More consistent than V1 or V2, but artifacts backflowed into the shooter and the TPU was too malleable.</p>
-            </div>
-            <div class="step">
-              <span class="step__label">V4 &middot; LM2</span>
-              <p>Curved the ends and switched TPU &rarr; PLA for stiffness. Better control, no backflow, easy and consistent &mdash; but it still occasionally sent two artifacts at once.</p>
-            </div>
-            <div class="step step--final">
-              <span class="step__label">V5 &middot; Interleague</span>
-              <p>A positional servo with a large curved upper that acts as a physical hardstop. While the intake runs, geometry alone prevents an artifact from reaching the shooter &mdash; the double-transfer bug is designed out rather than coded around.</p>
-              <p class="step__risk"><strong>Known tradeoffs:</strong> the transfer must reverse to reset, which limits cycle time, and it doesn't center the ball entering the shooter, so occasional inconsistency remains.</p>
-            </div>
-          </div>
-        </div>
-      </details>
-    </div>
   </div>
 </section>
 
 <!-- ---------- process ---------- -->
-<section class="section">
+<section class="section section--alt">
   <div class="wrap">
     <header class="section__head reveal">
       <p class="kicker">Method</p>
       <h2>How we engineer</h2>
+      <p class="section__sub">The same five steps produced both robots.</p>
     </header>
 
     <ol class="process reveal">
@@ -252,98 +163,11 @@
       <li><span class="process__n">4</span><h3>Build &amp; test</h3><p>Assemble from the CAD, then record performance and results rather than trusting a feel.</p></li>
       <li><span class="process__n">5</span><h3>Iterate</h3><p>Analyze, then redesign or keep. This loop is what produced the crescent transfer.</p></li>
     </ol>
-  </div>
-</section>
-
-<!-- ---------- software ---------- -->
-<section class="section section--dark">
-  <div class="wrap">
-    <header class="section__head reveal">
-      <p class="kicker kicker--light">Software</p>
-      <h2>The code that drives it</h2>
-      <p class="section__sub">
-        Java on Android Studio, structured around commands and subsystems. The interesting parts are
-        the control loops.
-      </p>
-    </header>
-
-    <div class="grid grid--soft">
-      <article class="scard reveal">
-        <span class="scard__tag">Architecture</span>
-        <h3>NextFTC CommandBase</h3>
-        <p>
-          An FTC-tailored library where commands, subsystems, and components move every mechanism
-          through simple finite-state-machine logic. Each mechanism is its own subsystem, controlled
-          by commands mapped to gamepad buttons.
-        </p>
-      </article>
-
-      <article class="scard reveal">
-        <span class="scard__tag">Autonomous</span>
-        <h3>Pedro Pathing</h3>
-        <p>
-          A reactive path follower built on Bézier curves. Its built-in PIDF control smooths our
-          motion and corrects for variance in path conditions. We also use it in TeleOp for
-          centripetal force correction and field-centric drive, and because it integrates with
-          NextFTC we can follow paths as commands.
-        </p>
-      </article>
-
-      <article class="scard scard--wide reveal">
-        <span class="scard__tag">Controls</span>
-        <h3>Custom velocity PIDF + low-pass filter</h3>
-        <p>
-          A consistent shooter needs precise velocity control, so we tuned a PIDF controller using
-          physics, trigonometry, and calculus to respond to the resistance and velocity shifts that
-          happen every time an artifact passes through the flywheels.
-        </p>
-        <p>
-          On top of the velocity PIDF we run a low-pass filter on measured velocity, averaging past
-          samples with the current one and feeding that as the setpoint. It smooths out the
-          high-frequency oscillation the raw signal caused in the loop.
-        </p>
-      </article>
-
-      <article class="scard reveal">
-        <span class="scard__tag">Vision</span>
-        <h3>Limelight 3A auto-aim</h3>
-        <p>
-          The Limelight detects the AprilTag on the classifier. We compute the heading error between
-          the camera center and the tag center, then run a PIDF controller on the robot's heading to
-          drive it to zero &mdash; so drivers stop burning seconds lining up shots.
-        </p>
-      </article>
-
-      <article class="scard reveal">
-        <span class="scard__tag">Localization</span>
-        <h3>Kalman filter sensor fusion</h3>
-        <p>
-          Deadwheels and an IMU on a goBILDA Pinpoint give excellent short-horizon localization, but
-          error accumulates over a 2.5-minute match. We fuse Pinpoint's estimate with pose
-          measurements derived from fixed field AprilTags through a Kalman filter, so we know where
-          we are in TeleOp too &mdash; enough to plan a path from any position for an automatic
-          endgame park.
-        </p>
-      </article>
-
-      <article class="scard reveal">
-        <span class="scard__tag">Tooling</span>
-        <h3>Panels dashboard</h3>
-        <p>
-          Live telemetry and graphs. We watch our autonomous path in real time and tune velocities
-          and servo positions without a rebuild cycle.
-        </p>
-      </article>
-    </div>
 
     <p class="center-cta reveal">
       <a class="btn btn--primary" href="https://github.com/ftcteam23405" target="_blank" rel="noopener">Our code on GitHub</a>
     </p>
-  </div>
-</section>
 
-<section class="section">
-  <div class="wrap">
     <div class="nextup reveal"><a href="awards.html">Next: awards &rarr;</a></div>
   </div>
 </section>
@@ -371,7 +195,7 @@
       <a href="https://ftcscout.org/teams/23405" target="_blank" rel="noopener">FTCScout</a>
     </nav>
     <p class="footer__legal">
-      <em>FIRST</em>&reg;, <em>FIRST</em>&reg; Tech Challenge, and DECODE<sup>&trade;</sup> are trademarks of
+      <em>FIRST</em>&reg;, <em>FIRST</em>&reg; Tech Challenge, DECODE<sup>&trade;</sup> and INTO THE DEEP<sup>&trade;</sup> are trademarks of
       <em>FIRST</em>&reg;, which is not affiliated with this site.<br>
       &copy; <span data-year>2026</span> FTC Team 23405. Built by the team.
     </p>

@@ -7,7 +7,7 @@
 <meta name="description" content="Sponsor FTC Team 23405 Crash Out! Your support funds robot parts, competition registration, and outreach that reached more than 10,000 people last season.">
 <meta name="theme-color" content="#fdf0e6">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/img/logo.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -63,12 +63,14 @@
       <h2>Our current sponsors</h2>
     </header>
 
-    <!-- If a logo file is missing, main.js swaps the image for the sponsor's name in text.
-         Drop logos into assets/img/sponsors/ — see the README in that folder. -->
+    <!-- Each logo links to the sponsor's own site. If a logo file is missing, main.js swaps
+         the image for the sponsor's name in text — see assets/img/sponsors/README.md.
+         Digitech Labs has no link yet: several unrelated companies share that name and we
+         don't want to send visitors to the wrong one. Add href when you have the URL. -->
     <ul class="sponsors reveal">
       <li class="sponsor">
         <a href="https://polymaker.com/" target="_blank" rel="noopener">
-          <img src="assets/img/sponsors/polymaker.png" alt="Polymaker" loading="lazy">
+          <img src="assets/img/sponsors/polymaker.png" alt="Polymaker" loading="lazy" width="595" height="137">
         </a>
       </li>
       <li class="sponsor">
@@ -77,13 +79,13 @@
         </a>
       </li>
       <li class="sponsor">
-        <a href="contact.html">
-          <img src="assets/img/sponsors/digitech-labs.png" alt="Digitech Labs" loading="lazy">
-        </a>
+        <span class="sponsor__tile">
+          <img src="assets/img/sponsors/digitech-labs.png" alt="Digitech Labs" loading="lazy" width="266" height="200">
+        </span>
       </li>
       <li class="sponsor">
         <a href="https://www.microsoft.com/" target="_blank" rel="noopener">
-          <img src="assets/img/sponsors/microsoft.png" alt="Microsoft" loading="lazy">
+          <img src="assets/img/sponsors/microsoft.png" alt="Microsoft" loading="lazy" width="261" height="200">
         </a>
       </li>
     </ul>
