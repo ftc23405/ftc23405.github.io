@@ -1,20 +1,21 @@
 # Sponsor logos
 
-Five sponsors, each linking to its own site.
+Five sponsors, all present, each linking to its own site.
 
-| File | Sponsor | Links to | Status |
+| File | Sponsor | Links to | Source |
 |---|---|---|---|
 | `polymaker.png` | Polymaker | polymaker.com | official logo |
 | `numurus.png` | Numurus | numurus.com | official logo |
 | `digitech-labs.png` | Digitech Labs | digitechlabs.com | official logo |
+| `fabworks.png` | Fabworks | fabworks.com | official logo |
 | `microsoft.png` | Microsoft | microsoft.com | from DECODE portfolio p.17, background keyed out |
-| `fabworks.png` | Fabworks | fabworks.com | **missing — add this** |
 
-Until `fabworks.png` exists, that tile shows the word "Fabworks" in text instead of a logo.
-Nothing breaks; it just looks less polished.
+`microsoft.png` is the only one not from official artwork — it was lifted from a 200&nbsp;DPI
+page render of the portfolio, so it's lower fidelity. Worth replacing if you can get the real
+file.
 
-`microsoft.png` was lifted from a 200&nbsp;DPI page render of the portfolio, so it's lower
-fidelity than official artwork would be. Worth replacing if you can get the real file.
+If a logo file is missing, its tile falls back to the sponsor's name in text, taken from the
+`alt` attribute. Nothing breaks; it just looks less polished.
 
 ## Adding or replacing a logo
 
@@ -25,10 +26,19 @@ fidelity than official artwork would be. Worth replacing if you can get the real
    - `width` and `height` set to the file's **real** pixel size, or the tile shifts as it loads
 3. Wrap it in `<a href="..." target="_blank" rel="noopener">` so it links out.
 
-If a logo arrives with a white background instead of transparency, don't just key out every
-white pixel — logos often contain white *inside* the artwork (Digitech Labs has white detail
-inside the head silhouette, and naive keying punches holes in it). Flood-fill inward from the
-image border so only background-connected white is removed.
+### Removing a white background
+
+If a logo arrives opaque on white, which method to use depends on the artwork:
+
+- **Flat wordmark** (Fabworks): key out every near-white pixel globally. The enclosed counters
+  in letters like `a` and `o` *should* go transparent so the tile shows through. Keep solid ink
+  fully opaque and only feather near-white pixels, or coloured details wash out — Fabworks' blue
+  period would have gone semi-transparent otherwise.
+- **Artwork containing white** (Digitech Labs): do *not* key globally. Its head silhouette has
+  white detail inside it, and a global key punches holes through the middle. Flood-fill inward
+  from the image border instead, so only background-connected white is removed.
+
+Look at the logo before picking. Getting this backwards is not subtle.
 
 ## Layout
 
