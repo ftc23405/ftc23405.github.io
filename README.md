@@ -45,6 +45,7 @@ assets/img/sponsors/           sponsor logos — see the README in that folder
 | `sponsors/polymaker.png` | official Polymaker logo | supplied by the team |
 | `sponsors/numurus.png` | official Numurus logo | supplied by the team |
 | `sponsors/digitech-labs.png`, `microsoft.png` | logos with the page background keyed out | DECODE portfolio, page 17 |
+| `sponsors/stem-bridge-foundation.png` | official STEM Bridge Foundation logo, background keyed out | stembridgefoundation.org |
 
 If a sponsor logo file is ever missing, that tile falls back to the sponsor's name in text —
 nothing breaks.

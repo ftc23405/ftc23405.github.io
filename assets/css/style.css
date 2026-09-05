@@ -653,6 +653,10 @@ ul, ol { margin: 0; padding: 0; }
 /* Cap height AND width so wide wordmarks and squarer stacked marks land at a
    similar visual weight instead of the square ones looking tiny. */
 .sponsor img { max-height: 72px; max-width: 100%; width: auto; object-fit: contain; }
+/* Circular or portrait badges are height-bound, so the 72px cap collapses their width
+   to a fraction of a wordmark's and the lettering stops resolving. Give them more room;
+   the tile grows with them and the wordmark rows are unaffected. */
+.sponsor--badge img { max-height: 112px; }
 .sponsor__fallback {
   font-family: var(--ff-display); font-weight: 800; font-size: 1.15rem;
   color: var(--ink); text-align: center; letter-spacing: -.01em;

@@ -1,6 +1,6 @@
 # Sponsor logos
 
-Five sponsors, all present, each linking to its own site.
+Six sponsors, all present, each linking to its own site.
 
 | File | Sponsor | Links to | Source |
 |---|---|---|---|
@@ -8,6 +8,7 @@ Five sponsors, all present, each linking to its own site.
 | `numurus.png` | Numurus | numurus.com | official logo |
 | `digitech-labs.png` | Digitech Labs | digitechlabs.com | official logo |
 | `fabworks.png` | Fabworks | fabworks.com | official logo |
+| `stem-bridge-foundation.png` | STEM Bridge Foundation | stembridgefoundation.org | official logo, background keyed out |
 | `microsoft.png` | Microsoft | microsoft.com | from DECODE portfolio p.17, background keyed out |
 
 `microsoft.png` is the only one not from official artwork — it was lifted from a 200&nbsp;DPI
@@ -34,9 +35,12 @@ If a logo arrives opaque on white, which method to use depends on the artwork:
   in letters like `a` and `o` *should* go transparent so the tile shows through. Keep solid ink
   fully opaque and only feather near-white pixels, or coloured details wash out — Fabworks' blue
   period would have gone semi-transparent otherwise.
-- **Artwork containing white** (Digitech Labs): do *not* key globally. Its head silhouette has
-  white detail inside it, and a global key punches holes through the middle. Flood-fill inward
-  from the image border instead, so only background-connected white is removed.
+- **Artwork containing white** (Digitech Labs, STEM Bridge Foundation): do *not* key globally.
+  Digitech's head silhouette has white detail inside it, and the STEM Bridge emblem is two white
+  figures cut out of an orange/green ring — a global key punches holes straight through the
+  middle of both. Flood-fill inward from the image border instead, so only background-connected
+  white is removed. STEM Bridge also arrives on a *cool* near-white (#f9fafa) rather than pure
+  white, and with a wide blank margin worth cropping off before export.
 
 Look at the logo before picking. Getting this backwards is not subtle.
 
@@ -46,6 +50,12 @@ The row is flexbox, not a fixed grid, so it wraps with the last row centred and 
 number of sponsors without a CSS change. Each tile is `flex: 1 1 270px; max-width: 340px`,
 which lands at about three per row on desktop and one per row on a phone.
 
+A logo whose artwork is a circular or portrait badge rather than a wordmark should get
+`class="sponsor sponsor--badge"` on its `<li>`, which raises its cap to 112px. At the plain
+72px cap a portrait badge is height-bound and collapses to about a quarter of a wordmark's
+width — `stem-bridge-foundation.png` rendered 67px wide before it got the class.
+
 That 270px basis matters: on narrower tiles, wide wordmarks get squeezed to roughly 35 px tall
 and taglines (like Numurus' "SMART SYSTEM SOLUTIONS") stop being readable. Rendered height is
-capped at 72 px, so square marks and wide wordmarks end up at a similar visual weight.
+capped at 72 px for wordmarks and 112 px for badges, which is what lands the two shapes at a
+similar visual weight.
