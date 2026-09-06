@@ -1,6 +1,6 @@
 # Sponsor logos
 
-Six sponsors, all present, each linking to its own site.
+Seven sponsors, all present, each linking to its own site.
 
 | File | Sponsor | Links to | Source |
 |---|---|---|---|
@@ -9,6 +9,7 @@ Six sponsors, all present, each linking to its own site.
 | `digitech-labs.png` | Digitech Labs | digitechlabs.com | official logo |
 | `fabworks.png` | Fabworks | fabworks.com | official logo |
 | `stem-bridge-foundation.png` | STEM Bridge Foundation | stembridgefoundation.org | official logo, background keyed out |
+| `sendcutsend.svg` | SendCutSend | sendcutsend.com | official logo, recoloured from white |
 | `microsoft.png` | Microsoft | microsoft.com | from DECODE portfolio p.17, background keyed out |
 
 `microsoft.png` is the only one not from official artwork — it was lifted from a 200&nbsp;DPI
@@ -18,10 +19,21 @@ file.
 If a logo file is missing, its tile falls back to the sponsor's name in text, taken from the
 `alt` attribute. Nothing breaks; it just looks less polished.
 
+`sendcutsend.svg` is the only SVG, and the only logo whose colour we changed. SendCutSend
+publishes just a white-on-dark wordmark, which is invisible on the cream tile, so the single
+path's `fill` is set to the site's ink (`#121014`) — the same weight Fabworks' black wordmark
+already sits at. If they ever publish a black or full-colour version, prefer it over ours.
+
 ## Adding or replacing a logo
 
 1. Save the file here. PNG with a transparent background is best (SVG works too — update `src`).
    600&ndash;700 px on the long edge is plenty.
+
+   **An SVG needs that long edge too.** The tile sets `width: auto`, so an image renders at its
+   intrinsic size unless `max-width`/`max-height` reins it in. The PNGs are ~700 px wide and get
+   capped down to the tile; SendCutSend's SVG ships at `width="150"`, which would have rendered
+   at 150 px — half the width of every other wordmark. Its `width`/`height` are scaled to
+   900&times;162 against an unchanged `viewBox` to put it on the same footing.
 2. Update the `<img>` in **both** `index.html` and `sponsor.html`:
    - `src` and `alt` (the `alt` text is what the text fallback uses)
    - `width` and `height` set to the file's **real** pixel size, or the tile shifts as it loads
