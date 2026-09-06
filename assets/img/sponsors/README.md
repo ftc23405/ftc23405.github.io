@@ -55,13 +55,16 @@ A logo whose artwork is a circular or portrait badge rather than a wordmark shou
 height-bound and collapses to about a quarter of a wordmark's width —
 `stem-bridge-foundation.png` rendered 67px wide before it got the class.
 
-The modifier trims that tile's padding to `.75rem` as well as raising the cap to 102px, and
-the two numbers go together. Tiles are `border-box` with a 132px `min-height`, so the default
-`1.4rem` padding leaves only 82px of usable height inside. Raising the cap on its own makes
-the tile deeper than the wordmark tiles beside it and the row stops looking uniform — which
-is the whole thing the cap was there to prevent. Change one number, recheck the other.
+The modifier raises that logo's cap to 102px, and the tile `min-height` of 152px is what pays
+for it. Tiles are `border-box`, so the shared `1.4rem` padding leaves exactly 102px of usable
+height inside — the badge fills that with the same breathing room every other logo gets, and
+no tile ends up taller than its neighbours. **The cap and the min-height go together:** raise
+the cap alone and the badge's row grows deeper than the wordmark row; the strip stops looking
+uniform, which is the whole thing the shared cap exists to prevent. Trimming just that tile's
+padding lines the rows back up but makes the badge sit edge to edge, cramped against airy
+wordmarks. Change one number, recheck the other.
 
 That 270px basis matters: on narrower tiles, wide wordmarks get squeezed to roughly 35 px tall
 and taglines (like Numurus' "SMART SYSTEM SOLUTIONS") stop being readable. Rendered height is
 capped at 72 px for wordmarks and 102 px for badges, which is what lands the two shapes at a
-similar visual weight while every tile stays 132 px tall.
+similar visual weight while every tile stays 152 px tall.
