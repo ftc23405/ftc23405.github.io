@@ -654,9 +654,12 @@ ul, ol { margin: 0; padding: 0; }
    similar visual weight instead of the square ones looking tiny. */
 .sponsor img { max-height: 72px; max-width: 100%; width: auto; object-fit: contain; }
 /* Circular or portrait badges are height-bound, so the 72px cap collapses their width
-   to a fraction of a wordmark's and the lettering stops resolving. Give them more room;
-   the tile grows with them and the wordmark rows are unaffected. */
-.sponsor--badge img { max-height: 112px; }
+   to a fraction of a wordmark's and the lettering stops resolving. Trim the tile's padding
+   instead of raising the cap alone: 132px of border-box height only leaves 82px inside at
+   the default 1.4rem, so a taller logo would push its whole row deeper than the wordmark
+   row. At .75rem the badge gets 102px and every tile stays exactly 132px. */
+.sponsor--badge a { padding: .75rem; }
+.sponsor--badge img { max-height: 102px; }
 .sponsor__fallback {
   font-family: var(--ff-display); font-weight: 800; font-size: 1.15rem;
   color: var(--ink); text-align: center; letter-spacing: -.01em;

@@ -51,11 +51,17 @@ number of sponsors without a CSS change. Each tile is `flex: 1 1 270px; max-widt
 which lands at about three per row on desktop and one per row on a phone.
 
 A logo whose artwork is a circular or portrait badge rather than a wordmark should get
-`class="sponsor sponsor--badge"` on its `<li>`, which raises its cap to 112px. At the plain
-72px cap a portrait badge is height-bound and collapses to about a quarter of a wordmark's
-width — `stem-bridge-foundation.png` rendered 67px wide before it got the class.
+`class="sponsor sponsor--badge"` on its `<li>`. At the plain 72px cap a portrait badge is
+height-bound and collapses to about a quarter of a wordmark's width —
+`stem-bridge-foundation.png` rendered 67px wide before it got the class.
+
+The modifier trims that tile's padding to `.75rem` as well as raising the cap to 102px, and
+the two numbers go together. Tiles are `border-box` with a 132px `min-height`, so the default
+`1.4rem` padding leaves only 82px of usable height inside. Raising the cap on its own makes
+the tile deeper than the wordmark tiles beside it and the row stops looking uniform — which
+is the whole thing the cap was there to prevent. Change one number, recheck the other.
 
 That 270px basis matters: on narrower tiles, wide wordmarks get squeezed to roughly 35 px tall
 and taglines (like Numurus' "SMART SYSTEM SOLUTIONS") stop being readable. Rendered height is
-capped at 72 px for wordmarks and 112 px for badges, which is what lands the two shapes at a
-similar visual weight.
+capped at 72 px for wordmarks and 102 px for badges, which is what lands the two shapes at a
+similar visual weight while every tile stays 132 px tall.
