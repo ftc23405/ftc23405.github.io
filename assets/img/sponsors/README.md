@@ -5,7 +5,7 @@ Seven sponsors, all present, each linking to its own site.
 | File | Sponsor | Links to | Source |
 |---|---|---|---|
 | `polymaker.png` | Polymaker | polymaker.com | official logo |
-| `numurus.png` | Numurus | numurus.com | official logo |
+| `numurus.png` | NEPI by Numurus | numurus.com | official NEPI logo, background keyed out, wordmark recoloured from white |
 | `digitech-labs.png` | Digitech Labs | digitechlabs.com | official logo |
 | `fabworks.png` | Fabworks | fabworks.com | official logo |
 | `stem-bridge-foundation.png` | STEM Bridge Foundation | stembridgefoundation.org | official logo, background keyed out |
@@ -77,6 +77,6 @@ padding lines the rows back up but makes the badge sit edge to edge, cramped aga
 wordmarks. Change one number, recheck the other.
 
 That 270px basis matters: on narrower tiles, wide wordmarks get squeezed to roughly 35 px tall
-and taglines (like Numurus' "SMART SYSTEM SOLUTIONS") stop being readable. Rendered height is
-capped at 72 px for wordmarks and 102 px for badges, which is what lands the two shapes at a
-similar visual weight while every tile stays 152 px tall.
+and taglines stop being readable. Rendered height is capped at 72 px for wordmarks and 102 px
+for badges, which is what lands the two shapes at a similar visual weight while every tile
+stays 152 px tall.
