@@ -106,55 +106,9 @@
         <footer>&ndash; Rachit, Mentor</footer>
       </article>
 
-      <!-- Mentors. The heading row below spans the full grid so the four cards under it read
-           as one group -- without it they're indistinguishable from the other cards sharing
-           this grid. Keep the copy season-agnostic: these are people who have worked with the
-           team across multiple years, not one-season help. -->
-      <header class="grid__head reveal">
-        <p class="kicker">Mentorship</p>
-        <h2>Our mentors</h2>
-      </header>
-      <article class="card reveal">
-        <h3>Rachit &mdash; Bosch</h3>
-        <p>
-          Rachit is an engineer at <strong>Bosch</strong> and came to us through an industry
-          connection. He works with us on the math, physics and controls behind whatever we're
-          building &mdash; he's the reason we understand why a feedback control loop makes a
-          mechanism repeatable &mdash; and he has reviewed our design and software work year
-          after year.
-        </p>
-      </article>
-
-      <article class="card reveal">
-        <h3>Varun &mdash; FTC 23404 alum &amp; University of Washington</h3>
-        <p>
-          Varun mentors us from both sides of the table: he competed in <em>FIRST</em> Tech
-          Challenge on <strong>team 23404</strong> and now studies at the
-          <strong>University of Washington</strong>. He works through mechanism design and the
-          physics underneath it with us, and gives actionable feedback rather than answers.
-        </p>
-      </article>
-
-      <article class="card reveal">
-        <h3>Rowan &mdash; FTC 3805 alum &amp; University of Washington</h3>
-        <p>
-          Rowan competed on <strong>FTC team 3805</strong>, is now at the
-          <strong>University of Washington</strong>, and is the founder of
-          <strong>NextFTC</strong>, a widely used command-based control library for
-          <em>FIRST</em> Tech Challenge. He helps us on both the hardware and software side and
-          gives us feedback on robot design.
-        </p>
-      </article>
-
-      <article class="card reveal">
-        <h3>Amber Kemmerling &mdash; Boeing</h3>
-        <p>
-          Amber, from <strong>Boeing</strong>, works with us on <strong>CAD</strong> and the
-          engineering concepts behind our designs &mdash; how to model a part so it can actually
-          be manufactured, and why a mechanism behaves the way it does once it leaves the screen.
-        </p>
-      </article>
-
+      <!-- Goals sit above the mentor roster: they close out the "who we are" thread started
+           by Our story / Core principles, so the page reads team -> ambitions -> the people
+           helping us get there, instead of interrupting that thread with the roster. -->
       <article class="card card--goals reveal">
         <h2>What we're chasing</h2>
         <div class="goalset">
@@ -171,6 +125,61 @@
             <p>Run every meeting on a clear agenda with a prioritized task list and a timeline we actually hold ourselves to.</p>
           </div>
         </div>
+      </article>
+
+      <!-- Mentors. The heading row below spans the full grid so the four cards under it read
+           as one group -- without it they're indistinguishable from the other cards sharing
+           this grid. Name goes in the h3 and the affiliation in .card__meta: packing both into
+           the heading made some titles wrap to two lines and others not, so the body copy in
+           a row started at different heights. Keep the copy season-agnostic: these are people
+           who have worked with the team across multiple years, not one-season help. -->
+      <header class="grid__head reveal">
+        <p class="kicker">Mentorship</p>
+        <h2>Our mentors</h2>
+      </header>
+      <article class="card card--mentor reveal">
+        <h3>Rachit</h3>
+        <p class="card__meta">Bosch</p>
+        <p>
+          Rachit is an engineer at <strong>Bosch</strong> and came to us through an industry
+          connection. He works with us on the math, physics and controls behind whatever we're
+          building &mdash; he's the reason we understand why a feedback control loop makes a
+          mechanism repeatable &mdash; and he has reviewed our design and software work year
+          after year.
+        </p>
+      </article>
+
+      <article class="card card--mentor reveal">
+        <h3>Varun</h3>
+        <p class="card__meta">FTC 23404 alum &middot; University of Washington</p>
+        <p>
+          Varun mentors us from both sides of the table: he competed in <em>FIRST</em> Tech
+          Challenge on <strong>team 23404</strong> and now studies at the
+          <strong>University of Washington</strong>. He works through mechanism design and the
+          physics underneath it with us, and gives actionable feedback rather than answers.
+        </p>
+      </article>
+
+      <article class="card card--mentor reveal">
+        <h3>Rowan</h3>
+        <p class="card__meta">FTC 3805 alum &middot; University of Washington</p>
+        <p>
+          Rowan competed on <strong>FTC team 3805</strong>, is now at the
+          <strong>University of Washington</strong>, and is the founder of
+          <strong>NextFTC</strong>, a widely used command-based control library for
+          <em>FIRST</em> Tech Challenge. He helps us on both the hardware and software side and
+          gives us feedback on robot design.
+        </p>
+      </article>
+
+      <article class="card card--mentor reveal">
+        <h3>Amber Kemmerling</h3>
+        <p class="card__meta">Boeing</p>
+        <p>
+          Amber, from <strong>Boeing</strong>, works with us on <strong>CAD</strong> and the
+          engineering concepts behind our designs &mdash; how to model a part so it can actually
+          be manufactured, and why a mechanism behaves the way it does once it leaves the screen.
+        </p>
       </article>
     </div>
 
