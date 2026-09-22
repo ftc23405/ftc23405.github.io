@@ -371,7 +371,13 @@ ul, ol { margin: 0; padding: 0; }
 .grid--about > * { grid-column: span 3; }
 .grid--about .card--wide { grid-column: span 6; }
 .grid--about .card--goals { grid-column: span 6; }
-.grid--about .card--quote { grid-column: span 6; }
+/* Half width so it sits beside Core principles and the four mentor cards below it
+   pair up cleanly 2x2 -- a span-6 quote here leaves a half-empty row. */
+.grid--about .card--quote { grid-column: span 3; }
+/* Full-width label row inside the grid, so a run of cards can be introduced as a group
+   without breaking out into its own <section>. */
+.grid--about .grid__head { grid-column: span 6; margin: clamp(.9rem, 2vw, 1.5rem) 0 -.35rem; }
+.grid__head h2 { margin: 0; }
 @media (max-width: 880px) {
   /* Collapse to one track. The span overrides below must repeat the two-class selectors
      above: `.grid--about > *` alone loses the specificity contest to
@@ -380,7 +386,8 @@ ul, ol { margin: 0; padding: 0; }
   .grid--about > *,
   .grid--about .card--wide,
   .grid--about .card--goals,
-  .grid--about .card--quote { grid-column: auto; }
+  .grid--about .card--quote,
+  .grid--about .grid__head { grid-column: auto; }
 }
 
 .card {
