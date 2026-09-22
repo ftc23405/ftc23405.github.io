@@ -1,6 +1,6 @@
 # Sponsor logos
 
-Seven sponsors, all present, each linking to its own site.
+Eight sponsors, all present, each linking to its own site.
 
 | File | Sponsor | Links to | Source |
 |---|---|---|---|
@@ -11,6 +11,7 @@ Seven sponsors, all present, each linking to its own site.
 | `stem-bridge-foundation.png` | STEM Bridge Foundation | stembridgefoundation.org | official logo, background keyed out |
 | `sendcutsend.svg` | SendCutSend | sendcutsend.com | official logo, recoloured from white |
 | `microsoft.png` | Microsoft | microsoft.com | from DECODE portfolio p.17, background keyed out |
+| `boeing.png` | Boeing | boeing.com | official logo, supplied by the team; already transparent, trimmed to its bounding box and scaled to 700 px wide |
 
 `microsoft.png` is the only one not from official artwork — it was lifted from a 200&nbsp;DPI
 page render of the portfolio, so it's lower fidelity. Worth replacing if you can get the real
