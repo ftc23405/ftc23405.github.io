@@ -1,0 +1,5 @@
+# Local Claude Code settings, not part of the site.
+.claude/
+
+# Preview screenshots the desktop app drops here; not site content.
+Claude outputs/
